@@ -1,5 +1,7 @@
 # Tensor prototypes (Broadridge)
 
+Data platform for Broadridge.
+
 Interactive prototypes for Broadridge Tensor, plus the Broadridge Design System Storybook they are built on.
 
 | Folder | What it is |
