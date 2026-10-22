@@ -1,0 +1,51 @@
+/* Figma: Header page — Global Header (HEADER, Top header, IconLink, Alerts badge, Profile) and Panel header. */
+.global {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--br-scale-600);
+  height: 48px; box-sizing: border-box; padding: 0 var(--br-scale-400);
+  background: var(--br-surface-global-level-1);
+  border-bottom: var(--br-border-width-sm) solid var(--br-border-separator-level-3);
+  font-family: var(--br-font-family-body-and-sub); color: var(--br-text-body);
+}
+.brand { display: flex; align-items: center; gap: var(--br-scale-300); min-width: 0; text-decoration: none; }
+.divider { width: 1px; height: 24px; background: var(--br-border-separator-level-1); flex: none; }
+.product { color: var(--br-text-headings); font-size: 16px; line-height: 20px; font-weight: var(--br-font-weight-semi-bold); white-space: nowrap; }
+.right { display: flex; align-items: center; gap: var(--br-scale-600); }
+.links { display: flex; align-items: center; gap: var(--br-scale-600); }
+.link {
+  all: unset; display: inline-flex; align-items: center; gap: var(--br-scale-200); cursor: pointer; border-radius: var(--br-radius-lg);
+  color: var(--br-text-body); font-size: var(--br-type-body-s-font-size); line-height: var(--br-type-body-s-line-height);
+}
+.link svg { color: var(--br-icons-default); }
+.link:hover, .link:hover svg { color: var(--br-text-body-on); }
+.link[aria-current="page"], .link[aria-current="page"] svg { color: var(--br-text-body-select); }
+.link:focus-visible { outline: var(--br-border-width-sm) solid var(--br-border-action-primary); outline-offset: 4px; }
+.iconLink { position: relative; }
+.badge {
+  position: absolute; top: -4px; right: -5px; min-width: 14px; height: 14px; padding: 0 3px; box-sizing: border-box; border-radius: 47px;
+  background: var(--br-icons-alert-red); color: var(--br-text-alert-on-color);
+  font-size: 9px; line-height: 14px; font-weight: var(--br-font-weight-bold); text-align: center; font-variant-numeric: tabular-nums;
+}
+.avatar {
+  all: unset; display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; cursor: pointer;
+  background: var(--br-surface-avatar); color: var(--br-text-headings); font-size: 14px; line-height: 20px; flex: none;
+}
+.avatar:hover { background: var(--br-surface-avatar-hover); }
+.avatar:focus-visible { outline: var(--br-border-width-sm) solid var(--br-border-action-primary); outline-offset: 2px; }
+
+/* Panel header: 40px bar on Surface/Ticket/Level 1 */
+.panel {
+  display: flex; align-items: center; gap: var(--br-scale-300); height: 40px; box-sizing: border-box; padding: var(--br-scale-100) var(--br-scale-300);
+  background: var(--br-surface-ticket-level-1); font-family: var(--br-font-family-body-and-sub);
+}
+.panel[data-floating="true"] { border-radius: var(--br-radius-xlg) var(--br-radius-xlg) 0 0; }
+.panelTitle { flex: 1; min-width: 0; color: var(--br-text-headings); font-size: var(--br-type-body-m-font-size); line-height: var(--br-type-body-m-line-height); font-weight: var(--br-font-weight-medium); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.expand {
+  all: unset; display: inline-flex; align-items: center; gap: var(--br-scale-200); height: 32px; cursor: pointer; border-radius: var(--br-radius-lg);
+  color: var(--br-text-information-low); font-size: var(--br-type-body-s-font-size); line-height: var(--br-type-body-s-line-height); font-weight: var(--br-font-weight-medium);
+}
+.expand svg { color: var(--br-icons-default); }
+.expand:hover, .expand:hover svg { color: var(--br-text-body-on); }
+.close { all: unset; display: inline-flex; cursor: pointer; color: var(--br-icons-default); border-radius: var(--br-radius-lg); }
+.close:hover { color: var(--br-icons-hover); }
+.expand:focus-visible, .close:focus-visible { outline: var(--br-border-width-sm) solid var(--br-border-action-primary); }
+.panelDivider { width: 1px; height: 16px; background: var(--br-border-separator-level-1); }

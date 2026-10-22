@@ -1,0 +1,35 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Introduction" />
+
+# Broadridge Design System
+
+A coded version of the **Broadridge Design System v1.0** Figma library, which is internally called Project Tensor. It starts with the foundations: colour, typography, spacing, shape and effects. Components will be added on top of them.
+
+Use the **Theme** toolbar to switch between **Dark**, the Figma default, and **Light**.
+
+## How the tokens are layered
+
+The Figma file has four variable collections. Each layer points at the one before it, and the CSS keeps those links as `var()` chains.
+
+- **Primitives:** the Raw collection (245 variables). Prefixes `--br-raw-*`, `--br-scale-*` and `--br-font-*`. Every hex value, the 4px scale, font family and weights.
+- **Roles:** the Brand collection (243). Prefixes `--br-brand-*`, `--br-radius-*` and `--br-border-width-*`. Gives colours their meaning: Primary, Bid, Ask, RFQ, Issue and chart series.
+- **Semantic:** the Semantic collection (279, with Dark and Light modes). Prefixes `--br-surface-*`, `--br-text-*`, `--br-border-*` and `--br-icons-*`. **These are what components use.**
+- **Type numbers:** the Responsive collection (30, Desktop mode only). Prefix `--br-type-*`. Font size, line height and paragraph spacing for each step.
+
+Text, effect and paint styles aren't variables in Figma, so they're exported separately and become `.br-text-*` classes and `--br-shadow-*` / `--br-paint-*` variables.
+
+## Rules for building components
+
+- Style components with **semantic** tokens only, for example `background: var(--br-surface-action-primary-default)`.
+- Spacing and sizes come from `--br-scale-*`. The default corner radius is `--br-radius-lg` (4px).
+- Set type with the `.br-text-*` classes, or with the `--br-type-*` variables when a class doesn't fit.
+- Bid/Ask, RFQ and Issue colours carry trading meaning. Don't use them for decoration.
+
+## Updating from Figma
+
+1. Open the Broadridge Design System v1.0 file in Figma Desktop and run the **Figma Desktop Bridge** plugin.
+2. Ask Claude to re-export the tokens. It runs figma-console's `figma_export_tokens` (DTCG) into `src/tokens/source/tokens.tokens.json`. Text and effect styles go in `src/tokens/source/styles.json`.
+3. Run `npm run tokens`, or just `npm run storybook`, which runs it first. That regenerates everything in `src/tokens/generated/`.
+
+Never edit `src/tokens/generated/` by hand.

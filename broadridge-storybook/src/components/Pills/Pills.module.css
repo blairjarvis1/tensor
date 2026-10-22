@@ -1,0 +1,49 @@
+/* Figma: Pills page — Chip (Filter / Grouping), Roundels, metric scenario. */
+.chip {
+  --c-border: var(--br-border-action-primary);
+  --c-border-hover: var(--br-border-action-primary-hover);
+  --c-fill: var(--br-surface-chip-filter-default);
+  --c-fill-hover: var(--br-surface-chip-filter-hover);
+  display: inline-flex; align-items: center; gap: var(--br-scale-100); box-sizing: border-box;
+  height: 24px; padding: 0 var(--br-scale-200); border-radius: var(--br-radius-lg);
+  border: var(--br-border-width-sm) solid var(--c-border); background: transparent;
+  color: var(--br-text-action-on-secondary-default);
+  font-family: var(--br-font-family-body-and-sub); font-weight: var(--br-font-weight-medium);
+  font-size: var(--br-type-body-s-font-size); line-height: var(--br-type-body-s-line-height); white-space: nowrap;
+  transition: background-color 100ms ease, border-color 100ms ease;
+}
+.compact { font-size: 11px; line-height: 12px; }
+.grouping {
+  --c-border: var(--br-border-chip-grouping);
+  --c-border-hover: var(--br-border-chip-grouping-hover);
+  --c-fill: var(--br-surface-chip-grouping);
+  --c-fill-hover: var(--br-surface-chip-grouping-hover);
+}
+button.chip { cursor: pointer; }
+.chip:hover { border-color: var(--c-border-hover); color: var(--br-text-action-on-secondary-hover); }
+/* Context=Playback: filled chip, as applied in the grid toolbar */
+.filled { background: var(--c-fill); color: var(--br-text-action-on-primary-default); }
+.filled:hover { background: var(--c-fill-hover); color: var(--br-text-action-on-primary-default); }
+.chip[data-disabled="true"] { border-color: var(--br-border-chip-filter-disabled); background: transparent; color: var(--br-text-disabled); }
+.grouping[data-disabled="true"] { border-color: var(--br-border-chip-grouping-disabled); }
+.chip:focus-visible, .remove:focus-visible { outline: var(--br-border-width-sm) solid var(--br-border-action-secondary); outline-offset: 1px; }
+.remove { all: unset; display: inline-flex; border-radius: var(--br-radius-md); cursor: pointer; opacity: 0.7; }
+.remove:hover { opacity: 1; }
+.count {
+  display: inline-flex; align-items: center; justify-content: center; min-width: 16px; height: 16px; padding: 0 4px; box-sizing: border-box; border-radius: 8px;
+  background: var(--br-surface-chip-filter-number-count); font-size: 10px; line-height: 16px; font-variant-numeric: tabular-nums;
+}
+
+.roundel { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; flex: none; color: #FFFFFF; }
+.roundel[data-tone="up"] { background: var(--br-surface-price-increase); }
+.roundel[data-tone="down"] { background: var(--br-surface-price-decrease); }
+.roundel[data-tone="neutral"] { background: var(--br-surface-ticker); color: var(--br-icons-information); }
+
+.scenario { display: inline-flex; flex-direction: column; align-items: center; gap: 2px; padding-top: 3px; font-family: var(--br-font-family-body-and-sub); }
+.scenarioValue { padding: 0 5px; border-radius: var(--br-radius-lg); color: #26272A; font-size: 12px; line-height: 20px; font-variant-numeric: tabular-nums; }
+.scenarioCaption { color: var(--br-text-body-off); font-size: 10px; line-height: 16px; font-variant-numeric: tabular-nums; }
+.actual { background: var(--br-brand-chart-blue-250); }
+.s1 { background: var(--br-surface-chip-green-metric); }
+.s2 { background: color-mix(in srgb, var(--br-brand-chart-purple-300) 60%, #FFFFFF); }
+.s3 { background: color-mix(in srgb, var(--br-brand-chart-pink-400) 60%, #FFFFFF); }
+.s4 { background: color-mix(in srgb, var(--br-brand-chart-yellow-300) 60%, #FFFFFF); }

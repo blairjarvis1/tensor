@@ -1,0 +1,25 @@
+/* Figma: Grid Cell Interaction=Error — Text/Ask with a 1px Border/Input Fields/Error underline across the cell. */
+.cellError {
+  display: block;
+  margin: 0 calc(var(--br-scale-200) * -1);
+  padding: 0 var(--br-scale-200);
+  line-height: 25px;
+  color: var(--br-text-ask);
+  box-shadow: inset 0 -1px 0 0 var(--br-border-input-fields-error);
+}
+
+.notice {
+  display: flex;
+  align-items: center;
+  gap: var(--br-scale-200);
+  margin: 0 var(--br-scale-300) var(--br-scale-200) 0;
+  padding: var(--br-scale-100) var(--br-scale-200);
+  border-radius: var(--br-radius-lg);
+  background: var(--br-surface-information);
+  color: var(--br-text-body);
+  font-size: var(--br-type-body-s-font-size);
+  line-height: var(--br-type-body-s-line-height);
+}
+.notice b { font-weight: var(--br-font-weight-medium); color: var(--br-text-body-on); }
+.notice button { all: unset; margin-left: auto; cursor: pointer; color: var(--br-text-body-select); font-weight: var(--br-font-weight-medium); }
+.notice button:hover { text-decoration: underline; }

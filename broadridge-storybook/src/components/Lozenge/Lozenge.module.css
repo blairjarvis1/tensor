@@ -1,0 +1,28 @@
+/* Figma: Pills page — Issue Lozenge and Direction (Bid / Ask). Used by the RFQ and notification cards. */
+.issue {
+  display: inline-flex; align-items: center; gap: 2px; box-sizing: border-box;
+  border-radius: var(--br-radius-lg); border: var(--br-border-width-sm) solid transparent;
+  color: var(--br-text-action-on-primary-default);
+  font-family: var(--br-font-family-body-and-sub); font-weight: var(--br-font-weight-medium); white-space: nowrap;
+}
+.medium { height: 24px; padding: 4px 8px 4px 4px; font-size: var(--br-type-body-s-font-size); line-height: var(--br-type-body-s-line-height); }
+.small  { height: 20px; padding: 2px 8px 2px 4px; font-size: var(--br-type-body-xxsm-font-size); line-height: var(--br-type-body-xxsm-line-height); }
+.issue1 { background: var(--br-surface-issue-1); border-color: var(--br-border-issue-1); }
+.issue2 { background: var(--br-surface-issue-2); border-color: var(--br-border-issue-2); }
+.issue3 { background: var(--br-surface-issue-3); border-color: var(--br-border-issue-3); }
+.system { background: var(--br-surface-issue-4); border-color: var(--br-border-issue-4); }
+.text { padding-right: 0; color: var(--br-text-body-off); }
+
+.direction {
+  display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box;
+  padding: 0 4px; border-radius: var(--br-radius-md);
+  color: #FFFFFF; /* Figma binds Text/Badge On, which lives in a remote library; it renders white. */
+  font-family: var(--br-font-family-body-and-sub); font-weight: var(--br-font-weight-medium);
+  font-size: var(--br-type-body-s-font-size); line-height: var(--br-type-body-s-line-height);
+}
+.dirSmall { height: 16px; }
+.dirLarge { height: 20px; }
+.bid { background: var(--br-surface-bid); }
+.ask { background: var(--br-surface-ask); }
+.bid.off { background: var(--br-surface-bid-off); color: var(--br-text-on-bid-disabled); }
+.ask.off { background: var(--br-surface-ask-off); color: var(--br-text-on-ask-disabled); }

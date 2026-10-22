@@ -1,0 +1,123 @@
+/* Figma: Header / HEADER — 32px, Logo and brand (Large) left, Top header (24px gap) + window controls right. */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 32px;
+  flex: none;
+  user-select: none;
+}
+.brand { display: flex; align-items: center; gap: var(--br-scale-300); }
+.divider { width: 1px; height: 25px; background: var(--br-border-separator-level-5); }
+/* Figma: "Tensor" — Medium 16, Text/Body On */
+.product { color: var(--br-text-body-on); font-size: var(--br-type-body-l-font-size); line-height: 24px; font-weight: var(--br-font-weight-medium); }
+
+/* Figma: icons / 24 / sorting Up (12 × 21 frame, triangle in Icons/Default) */
+.caret,
+.caretUp {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 21px;
+  border-radius: var(--br-radius-md);
+  color: var(--br-icons-default);
+  cursor: pointer;
+}
+.caretUp { width: 16px; }
+.caret:hover, .caretUp:hover { color: var(--br-icons-hover); background: var(--br-surface-tab-buttons-hover-secondary); }
+.caret:focus-visible, .caretUp:focus-visible { outline: var(--br-border-width-sm) solid var(--br-border-action-primary); outline-offset: 1px; }
+
+/* Folded header in a panel bar (Logo and brand, Title=Logo only): logo slot, 8px, divider, 8px, title. */
+.folded { display: inline-flex; align-items: center; gap: var(--br-scale-200); flex: none; }
+.foldedLogo { display: inline-flex; align-items: center; gap: 2px; height: 21px; }
+.foldedDivider { width: 1px; height: 21px; background: var(--br-border-separator-level-1); }
+
+.right { display: flex; align-items: center; gap: var(--br-scale-600); }
+.vr { width: 1px; height: 25px; background: var(--br-border-separator-level-1); }
+
+/* Figma: IconLink — 24px icon (Icons/Default) + Bdy sm Reg label (Text/Body), 8px apart */
+.link {
+  all: unset;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--br-scale-200);
+  height: 24px;
+  border-radius: var(--br-radius-lg);
+  color: var(--br-text-body);
+  font-size: var(--br-type-body-s-font-size);
+  line-height: var(--br-type-body-s-line-height);
+  cursor: pointer;
+}
+.link svg { color: var(--br-icons-default); transition: color 100ms ease; }
+.link:hover svg, .link[aria-expanded="true"] svg { color: var(--br-icons-hover); }
+.link:hover, .link[aria-expanded="true"] { color: var(--br-text-body-on); }
+.link:focus-visible, .avatar:focus-visible { outline: var(--br-border-width-sm) solid var(--br-border-action-primary); outline-offset: 4px; }
+
+/* Figma: icons/Alerts/1-Digit — 16px Icons/Alert/Red roundel at 13, -3 */
+.badge {
+  position: absolute;
+  left: 13px;
+  top: -3px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 47px;
+  background: var(--br-icons-alert-red);
+  color: var(--br-text-alert-on-color);
+  font-size: 10px;
+  line-height: 16px;
+  font-weight: var(--br-font-weight-bold);
+  text-align: center;
+}
+
+/* Figma: Profile, Size=Default — 32px Surface/Avatar circle, Body M Regular initials */
+.avatar {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 28px;
+  background: var(--br-surface-avatar);
+  color: var(--br-text-headings);
+  font-size: var(--br-type-body-m-font-size);
+  line-height: var(--br-type-body-m-line-height);
+  cursor: pointer;
+}
+.avatar:hover, .avatar[aria-expanded="true"] { background: var(--br-surface-avatar-hover); }
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: var(--br-scale-200);
+  height: 32px;
+  padding: 0 var(--br-scale-200);
+  border-radius: var(--br-radius-lg);
+  border: var(--br-border-width-sm) solid var(--br-border-input-fields-selected);
+  background: var(--br-surface-input-fields-default);
+  color: var(--br-icons-default);
+}
+.searchBox input { all: unset; flex: 1; color: var(--br-text-input-fields-filled); font-size: var(--br-type-body-s-font-size); line-height: var(--br-type-body-s-line-height); }
+.searchBox input::placeholder { color: var(--br-text-information-low); }
+.hint { color: var(--br-text-information-low); font-size: 10px; line-height: 16px; }
+
+.notice {
+  all: unset;
+  display: flex;
+  gap: var(--br-scale-200);
+  padding: var(--br-scale-200);
+  border-radius: var(--br-radius-lg);
+  background: var(--br-surface-notification-background);
+  color: var(--br-text-body);
+  font-size: var(--br-type-body-s-font-size);
+  line-height: var(--br-type-body-s-line-height);
+  cursor: pointer;
+}
+.notice:hover { background: var(--br-surface-menu-hover); }
+.notice b { font-weight: var(--br-font-weight-medium); color: var(--br-text-body-on); }
+.notice small { display: block; margin-top: 2px; color: var(--br-text-information-low); font-size: 10px; }
+.noticeDot { width: 8px; height: 8px; margin-top: 4px; border-radius: 50%; background: var(--br-surface-action-primary-default); flex: none; }

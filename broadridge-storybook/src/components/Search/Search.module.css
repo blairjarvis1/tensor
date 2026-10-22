@@ -1,0 +1,35 @@
+/* Figma: Search page — Global Search v.2 (Main search bar, filter row, results, preview card). */
+.root { position: relative; width: var(--w, 800px); max-width: 100%; font-family: var(--br-font-family-body-and-sub); }
+.bar {
+  display: flex; align-items: center; gap: var(--br-scale-200); box-sizing: border-box; min-height: 40px; padding: var(--br-scale-100) var(--br-scale-300);
+  border-radius: var(--br-radius-lg); border: var(--br-border-width-sm) solid var(--br-border-input-fields-default); background: var(--br-surface-input-fields-default);
+  transition: border-color 100ms ease;
+}
+.bar:hover { border-color: var(--br-border-input-fields-hover); }
+.bar:focus-within, .root[data-open="true"] .bar { border-color: var(--br-border-input-fields-selected); }
+.tokens { display: flex; flex-wrap: wrap; align-items: center; gap: var(--br-scale-100); flex: 1; min-width: 0; }
+.input { all: unset; flex: 1; min-width: 120px; color: var(--br-text-input-fields-filled); font-size: var(--br-type-body-s-font-size); line-height: 24px; }
+.input::placeholder { color: var(--br-text-information-low); }
+.operator { all: unset; display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: var(--br-radius-md); border: var(--br-border-width-sm) solid var(--br-border-action-secondary); color: var(--br-icons-default); cursor: pointer; }
+.operator:hover { background: var(--br-surface-action-primary-default); border-color: var(--br-border-action-primary); color: var(--br-text-action-on-primary-default); }
+.operator:focus-visible, .searchBtn:focus-visible { outline: var(--br-border-width-sm) solid var(--br-border-action-primary); }
+.searchBtn { all: unset; display: inline-flex; cursor: pointer; color: var(--br-icons-default); border-radius: var(--br-radius-md); }
+.searchBtn:hover { color: var(--br-icons-hover); }
+
+.panel {
+  position: absolute; z-index: 30; left: 0; right: 0; top: calc(100% + 4px); display: flex; gap: var(--br-scale-300); box-sizing: border-box; padding: var(--br-scale-300);
+  border-radius: var(--br-radius-xlg); background: var(--br-surface-menu-default); box-shadow: var(--br-shadow-menu-modal); flex-direction: column;
+}
+.filters { display: flex; align-items: center; gap: var(--br-scale-200); flex-wrap: wrap; padding-bottom: var(--br-scale-300); border-bottom: var(--br-border-width-sm) solid var(--br-border-separator-level-2); color: var(--br-text-body-on); font-size: var(--br-type-body-xxsm-font-size); font-weight: var(--br-font-weight-medium); }
+.results { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--br-scale-300); }
+.results[data-preview="true"] { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; max-height: 260px; overflow: auto; }
+.option { display: flex; align-items: center; gap: var(--br-scale-200); min-height: 32px; padding: 0 var(--br-scale-200); border-radius: var(--br-radius-lg); cursor: pointer; color: var(--br-text-body); font-size: var(--br-type-body-xxsm-font-size); line-height: 16px; font-weight: var(--br-font-weight-medium); }
+.option[data-active="true"] { background: var(--br-surface-menu-hover); color: var(--br-text-body-on); }
+.optionKind { margin-left: auto; color: var(--br-text-information-low); font-weight: var(--br-font-weight-regular); }
+.none { padding: var(--br-scale-400); color: var(--br-text-information-low); font-size: var(--br-type-body-s-font-size); text-align: center; }
+mark.hl { background: transparent; color: var(--br-text-headings); font-weight: var(--br-font-weight-bold); }
+
+.preview { display: flex; flex-direction: column; gap: var(--br-scale-200); padding: var(--br-scale-300); border-radius: var(--br-radius-lg); background: var(--br-surface-global-level-5); color: var(--br-text-body); font-size: var(--br-type-body-xxsm-font-size); line-height: 16px; align-self: start; }
+.previewHead { display: flex; align-items: center; gap: var(--br-scale-200); color: var(--br-text-headings); font-size: var(--br-type-body-s-font-size); font-weight: var(--br-font-weight-medium); }
+.logo { width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; background: var(--br-surface-action-primary-default); color: var(--br-text-action-on-primary-default); font-weight: var(--br-font-weight-bold); font-size: 12px; flex: none; }

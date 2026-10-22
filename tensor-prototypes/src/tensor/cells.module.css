@@ -1,0 +1,66 @@
+/* Figma: Status Pills (Execution status) — 101 × 20, 4px radius, 1px Border/Progress/* outline. */
+.status {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 101px;
+  height: 20px;
+  padding: 0 var(--br-scale-200);
+  vertical-align: middle;
+  overflow: hidden;
+  border-radius: var(--br-radius-lg);
+  border: var(--br-border-width-sm) solid transparent;
+  color: var(--br-text-body);
+  font-size: 11px;
+  line-height: 12px;
+}
+.statusText { position: relative; }
+.fill { position: absolute; left: 0; top: 0; bottom: 0; background: var(--br-surface-progress-blue-part-filled); transition: width 400ms ease; }
+.status[data-s="new"],
+.status[data-s="working"],
+.status[data-s="part-filled"] { border-color: var(--br-border-progress-blue-part-filled-new); background: var(--br-surface-grid-level-5); }
+.status[data-s="filled"] { background: var(--br-surface-progress-green-filled); border-color: var(--br-border-progress-green-filled); color: var(--br-text-body-on); }
+.status[data-s="filled"][data-final] { background: var(--br-surface-progress-bg-3); border-color: var(--br-border-progress-filled); color: var(--br-text-body); }
+.status[data-s="cancelled"] { border-color: var(--br-border-progress-red-cancelled); color: var(--br-text-cancelled); }
+.status[data-s="cancelled"][data-final] { border-color: transparent; color: var(--br-text-body-deactive); }
+
+/* Figma: acronym */
+.acronym {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 14px;
+  height: 13px;
+  padding: 1px 2px;
+  border-radius: var(--br-radius-md);
+  background: var(--br-surface-table-header);
+  color: var(--br-text-body);
+  font-size: 9px;
+  line-height: 11px;
+  flex: none;
+}
+.withAcr { display: flex; align-items: center; gap: var(--br-scale-200); }
+.withAcr > span:last-child { flex: 1; text-align: right; }
+.withAcr[data-align="left"] > span:last-child { text-align: left; }
+
+.change { display: flex; align-items: center; gap: var(--br-scale-100); }
+.change > span:last-child { flex: 1; text-align: right; }
+.change > .acronym { margin-right: var(--br-scale-200); }
+.up { color: var(--br-text-price-increase); }
+.down { color: var(--br-text-price-descrease); }
+
+/* Figma: Graphs (small multiples) in Chart Mint Green with Surface/Graph/Line */
+.spark { display: inline-block; vertical-align: middle; }
+.sparkBar { fill: var(--br-surface-charting-mint-green); }
+.sparkBase { stroke: var(--br-surface-charting-mint-green); stroke-dasharray: 1 2; opacity: 0.6; }
+.sparkLine { fill: none; stroke: var(--br-surface-graph-line); stroke-width: 1; }
+
+.detail {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(120px, 180px));
+  gap: var(--br-scale-200) var(--br-scale-600);
+  margin: 0;
+}
+.detail div { display: flex; flex-direction: column; gap: 2px; }
+.detail dt { color: var(--br-text-information-low); font-size: 10px; line-height: 16px; }
+.detail dd { margin: 0; color: var(--br-text-body-on); font-size: 12px; line-height: 16px; }

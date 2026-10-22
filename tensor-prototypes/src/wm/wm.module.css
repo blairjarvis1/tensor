@@ -1,0 +1,83 @@
+/* Figma: Windows Framework — Surface/Global/Level 1, 8px radius, 16 / 20 padding, 16px gap, Effects/Dropshadow blur 12. */
+.window {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: var(--br-scale-400);
+  padding: var(--br-scale-400) var(--br-scale-500);
+  border-radius: var(--br-radius-xlg);
+  background: var(--br-surface-global-level-1);
+  box-shadow: 0 0 12px 0 var(--br-effects-dropshadow);
+  font-family: var(--br-font-family-body-and-sub);
+  color: var(--br-text-body);
+  transition: opacity 160ms ease, transform 180ms cubic-bezier(0.2, 0, 0, 1), box-shadow 160ms ease;
+  transform-origin: 60% 110%;
+}
+/* The active window lifts a little further off the desktop. */
+.window[data-focused="true"] { box-shadow: 0 0 12px 0 var(--br-effects-dropshadow), 0 12px 40px 0 var(--br-effects-dropshadow); }
+.window[data-mode="max"],
+.window[data-snapped="true"] { border-radius: 0; }
+.window[data-mode="min"] { opacity: 0; transform: translateY(30%) scale(0.4); pointer-events: none; }
+
+/* Resize handles sit just inside the frame edge. */
+.edge { position: absolute; z-index: 5; }
+.edge[data-edge="n"] { top: -3px; left: 12px; right: 12px; height: 7px; cursor: ns-resize; }
+.edge[data-edge="s"] { bottom: -3px; left: 12px; right: 12px; height: 7px; cursor: ns-resize; }
+.edge[data-edge="e"] { right: -3px; top: 12px; bottom: 12px; width: 7px; cursor: ew-resize; }
+.edge[data-edge="w"] { left: -3px; top: 12px; bottom: 12px; width: 7px; cursor: ew-resize; }
+.edge[data-edge="ne"] { top: -3px; right: -3px; width: 14px; height: 14px; cursor: nesw-resize; }
+.edge[data-edge="sw"] { bottom: -3px; left: -3px; width: 14px; height: 14px; cursor: nesw-resize; }
+.edge[data-edge="nw"] { top: -3px; left: -3px; width: 14px; height: 14px; cursor: nwse-resize; }
+.edge[data-edge="se"] { bottom: -3px; right: -3px; width: 14px; height: 14px; cursor: nwse-resize; }
+
+/* Figma: Windows Browser Controls — 20px icons in Icons/Default, 8px apart, 16px left padding. */
+.controls { display: flex; align-items: center; gap: var(--br-scale-200); padding-left: var(--br-scale-400); flex: none; }
+.control {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--br-radius-md);
+  color: var(--br-icons-default);
+  cursor: pointer;
+}
+.control:hover { color: var(--br-icons-hover); background: var(--br-surface-tab-buttons-hover-secondary); }
+.close:hover { color: var(--br-text-alert-on-color); background: var(--br-surface-action-error-default); }
+.control:focus-visible { outline: var(--br-border-width-sm) solid var(--br-border-action-primary); outline-offset: 1px; }
+
+/* Drag previews: Windows-style snap ghost and the dock target inside a window. */
+.snapPreview {
+  position: absolute;
+  z-index: 9000;
+  pointer-events: none;
+  border-radius: var(--br-radius-xlg);
+  background: color-mix(in srgb, var(--br-surface-global-level-3) 35%, transparent);
+  border: var(--br-border-width-sm) solid color-mix(in srgb, var(--br-surface-global-level-3) 70%, transparent);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 12px 0 var(--br-effects-dropshadow);
+  transition: left 120ms ease, top 120ms ease, width 120ms ease, height 120ms ease;
+}
+.dockPreview {
+  position: absolute;
+  z-index: 9000;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--br-radius-xlg);
+  border: var(--br-border-width-md) dashed var(--br-border-action-primary);
+  background: color-mix(in srgb, var(--br-surface-action-primary-default) 10%, transparent);
+  color: var(--br-text-body-select);
+  font-size: var(--br-type-body-m-font-size);
+  line-height: var(--br-type-body-m-line-height);
+  font-weight: var(--br-font-weight-medium);
+  transition: left 120ms ease, top 120ms ease, width 120ms ease, height 120ms ease;
+}
+.dockPreview span {
+  padding: var(--br-scale-200) var(--br-scale-400);
+  border-radius: var(--br-radius-lg);
+  background: var(--br-surface-menu-default);
+  box-shadow: var(--br-shadow-menu-modal);
+}

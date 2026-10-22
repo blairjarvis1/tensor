@@ -1,0 +1,10 @@
+/* App-level base styles built on the Broadridge tokens. */
+html, body {
+  margin: 0;
+  background: var(--br-surface-global-level-1);
+  color: var(--br-text-body);
+  font-family: var(--br-font-family-body-and-sub);
+  font-size: 12px;
+  line-height: 16px;
+  -webkit-font-smoothing: antialiased;
+}

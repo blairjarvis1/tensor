@@ -1,0 +1,185 @@
+/* Figma: Grid Master Header, Type=Minimised — horizontal, 12px gap, padding 0 12 12 0. */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--br-scale-300);
+  height: 44px;
+  padding: 0 var(--br-scale-300) var(--br-scale-300) 0;
+  flex: none;
+  min-width: 0;
+}
+.left { display: flex; align-items: center; gap: var(--br-scale-400); flex: 1 1 auto; min-width: 0; height: 32px; }
+.left > * { flex: none; }
+.right { display: flex; align-items: center; gap: var(--br-scale-200); flex: none; height: 32px; }
+
+/* Title: Bdy md Med (14/20), Text/Headings */
+.title {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  color: var(--br-text-headings);
+  font-size: var(--br-type-body-m-font-size);
+  line-height: var(--br-type-body-m-line-height);
+  font-weight: var(--br-font-weight-medium);
+  white-space: nowrap;
+  user-select: none;
+}
+.title { position: relative; }
+.grip { position: absolute; left: -18px; top: 2px; display: inline-flex; color: var(--br-icons-default); opacity: 0; transition: opacity 120ms ease; }
+.title[data-draggable] { cursor: grab; border-radius: var(--br-radius-md); }
+.title[data-draggable]:hover .grip { opacity: 1; }
+.title[data-draggable]:active { cursor: grabbing; }
+.context {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--br-scale-100);
+  margin-left: calc(var(--br-scale-300) * -1);
+  flex: 0 1 auto !important;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--br-text-information-low);
+  font-size: var(--br-type-body-s-font-size);
+  line-height: var(--br-type-body-s-line-height);
+  white-space: nowrap;
+}
+
+/* Tab Groups: "Tabs" label (Bdy xsm Med, Text/Information Low) 10px from the pill */
+.tabGroups { display: flex; align-items: center; gap: 10px; }
+.tabsLabel { color: var(--br-text-information-low); font-size: 11px; line-height: 12px; font-weight: var(--br-font-weight-medium); }
+.tabsRow { display: flex; align-items: center; gap: var(--br-scale-100); }
+.pill {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 24px;
+  padding: 0 var(--br-scale-200);
+  box-sizing: border-box;
+  border-radius: 3px;
+  background: var(--br-surface-default);
+  color: var(--br-text-body);
+  font-size: var(--br-type-body-s-font-size);
+  line-height: var(--br-type-body-s-line-height);
+  font-weight: var(--br-font-weight-medium);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.pill:hover { background: var(--br-surface-tab-buttons-hover-primary-2); }
+.pill:focus-visible, .addBtn:focus-visible, .tool:focus-visible, .chevron:focus-visible { outline: var(--br-border-width-sm) solid var(--br-border-action-primary); outline-offset: 1px; }
+.pillText { max-width: 160px; overflow: hidden; text-overflow: ellipsis; }
+.addBtn { all: unset; display: inline-flex; width: 20px; height: 20px; border-radius: var(--br-radius-md); color: var(--br-icons-default); cursor: pointer; }
+.addBtn:hover { color: var(--br-icons-hover); }
+
+/* Figma: Grid Filters — 8px gap, 20px Border/Separator Level 3 dividers */
+.filters { display: flex; align-items: center; gap: var(--br-scale-200); height: 32px; }
+.sep { width: 1px; height: 20px; background: var(--br-border-separator-level-3); flex: none; }
+.count { color: var(--br-text-information-low); font-size: var(--br-type-body-s-font-size); line-height: 20px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+.tool {
+  all: unset;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex: none;
+  box-sizing: border-box;
+  border-radius: var(--br-radius-lg);
+  color: var(--br-icons-default);
+  cursor: pointer;
+}
+.tool:hover { color: var(--br-icons-hover); }
+.tool[aria-pressed="true"] { color: var(--br-icons-actions-default-hover); background: var(--br-surface-tab-buttons-active-secondary); }
+/* Pause Feed: Button - v2 Secondary (1px Border/Action/Action Secondary Disabled outline) */
+.secondary { border: var(--br-border-width-sm) solid var(--br-border-action-action-secondary-disabled); }
+.secondary:hover { border-color: var(--br-border-action-secondary-hover); }
+.badge {
+  position: absolute;
+  top: 2px;
+  right: 1px;
+  min-width: 14px;
+  height: 14px;
+  padding: 0 3px;
+  box-sizing: border-box;
+  border-radius: 47px;
+  background: var(--br-surface-chip-filter-default);
+  color: var(--br-text-action-on-primary-default);
+  font-size: 9px;
+  line-height: 14px;
+  font-weight: var(--br-font-weight-bold);
+  text-align: center;
+}
+
+.liveGroup { display: flex; align-items: center; gap: var(--br-scale-100); }
+.boltIcon { display: inline-flex; color: var(--br-icons-default); transition: color 120ms ease; }
+.boltIcon[data-on] { color: var(--br-icons-warning); }
+
+.date { display: flex; align-items: center; }
+.dateLabel { color: var(--br-text-information-low); font-size: 11px; line-height: 12px; font-weight: var(--br-font-weight-medium); white-space: nowrap; }
+
+/* Search expands in place of the search button (Figma input field, Small) */
+.search {
+  display: flex;
+  align-items: center;
+  gap: var(--br-scale-100);
+  width: 240px;
+  height: 28px;
+  padding: 0 var(--br-scale-100) 0 var(--br-scale-200);
+  border-radius: var(--br-radius-lg);
+  border: var(--br-border-width-sm) solid var(--br-border-input-fields-selected);
+  background: var(--br-surface-input-fields-default);
+  color: var(--br-icons-default);
+}
+.search input {
+  all: unset;
+  flex: 1;
+  min-width: 0;
+  color: var(--br-text-input-fields-filled);
+  font-size: var(--br-type-body-s-font-size);
+  line-height: var(--br-type-body-s-line-height);
+}
+.search input::placeholder { color: var(--br-text-information-low); }
+.search button { all: unset; display: inline-flex; cursor: pointer; color: var(--br-icons-default); border-radius: var(--br-radius-md); }
+.search button:hover { color: var(--br-icons-hover); }
+
+/* Figma: Grid Filters, Filters=Minimised — 56 × 32 group with a 1px Border/Action/Action Secondary Disabled outline */
+.minimised {
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  border-radius: var(--br-radius-lg);
+  border: var(--br-border-width-sm) solid var(--br-border-action-action-secondary-disabled);
+}
+.minimised .tool { width: 30px; height: 30px; }
+.chevron { all: unset; display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 30px; color: var(--br-icons-default); cursor: pointer; border-radius: var(--br-radius-lg); }
+.chevron:hover { color: var(--br-icons-hover); }
+.collapse { width: 30px; height: 30px; border: var(--br-border-width-sm) solid var(--br-border-action-action-secondary-disabled); box-sizing: border-box; }
+
+/* Popover forms */
+.field { display: flex; flex-direction: column; gap: var(--br-scale-100); color: var(--br-text-body-on); font-size: 11px; line-height: 16px; }
+.input {
+  all: unset;
+  height: 32px;
+  padding: 0 var(--br-scale-200);
+  box-sizing: border-box;
+  border-radius: var(--br-radius-lg);
+  border: var(--br-border-width-sm) solid var(--br-border-input-fields-default);
+  background: var(--br-surface-input-fields-default);
+  color: var(--br-text-input-fields-filled);
+  font-size: var(--br-type-body-s-font-size);
+}
+.input:hover { border-color: var(--br-border-input-fields-hover); }
+.input:focus { border-color: var(--br-border-input-fields-selected); }
+.input::placeholder { color: var(--br-text-information-low); }
+.hint { color: var(--br-text-information-low); font-size: 10px; line-height: 16px; }
+.filterGroup { display: flex; flex-direction: column; gap: var(--br-scale-100); }
+.filterLabel { color: var(--br-text-information-low); font-size: 11px; line-height: 16px; }
+.chips { display: flex; flex-wrap: wrap; gap: var(--br-scale-100); }
+
+/* Narrow panels (e.g. 50/50 Horizontal): drop the secondary labels before anything overlaps. */
+@container panel (max-width: 1240px) { .context { max-width: 220px; } }
+@container panel (max-width: 1080px) { .count, .dateLabel { display: none; } .count + .sep { display: none; } }
+@container panel (max-width: 900px) { .context { display: none; } .tabsLabel { display: none; } }

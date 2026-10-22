@@ -1,0 +1,65 @@
+/* Figma: Messaging page — GlobalBanner, NotificationToast, status toast, ConfirmationModal - v2, Icon text placeholder. */
+.banner {
+  display: flex; align-items: center; gap: var(--br-scale-200); box-sizing: border-box; min-height: 36px;
+  padding: var(--br-scale-200) var(--br-scale-500) var(--br-scale-200) var(--br-scale-300); border-radius: var(--br-radius-xlg);
+  color: var(--br-text-alert-on-color); font-family: var(--br-font-family-body-and-sub); font-size: var(--br-type-body-s-font-size); line-height: var(--br-type-body-s-line-height);
+}
+.banner[data-tone="error"] { background: var(--br-brand-alerts-600); }
+.banner[data-tone="warning"] { background: var(--br-surface-warning); color: var(--br-text-body-on); }
+.banner[data-tone="success"] { background: var(--br-surface-success); color: var(--br-text-body-on); }
+.banner[data-tone="info"] { background: var(--br-surface-issue-4); }
+.bannerText { flex: 1; min-width: 0; }
+.bannerAction { all: unset; cursor: pointer; display: inline-flex; border-radius: var(--br-radius-md); opacity: 0.85; }
+.bannerAction:hover { opacity: 1; }
+.bannerAction:focus-visible { outline: var(--br-border-width-sm) solid currentColor; }
+.bannerLink { all: unset; cursor: pointer; text-decoration: underline; font-weight: var(--br-font-weight-medium); }
+
+.toast {
+  display: flex; box-sizing: border-box; width: 333px; min-height: 80px; overflow: hidden;
+  border-radius: var(--br-radius-xlg); background: var(--br-surface-menu-default); box-shadow: var(--br-shadow-menu-modal);
+  font-family: var(--br-font-family-body-and-sub);
+}
+.toastBody { flex: 1; display: flex; gap: var(--br-scale-200); padding: var(--br-scale-300); min-width: 0; }
+.toastIcon { display: inline-flex; color: var(--br-icons-alert-red); flex: none; }
+.toast[data-tone="success"] .toastIcon { color: var(--br-icons-success); }
+.toast[data-tone="info"] .toastIcon { color: var(--br-border-action-primary); }
+.toast[data-tone="warning"] .toastIcon { color: var(--br-icons-warning); }
+.toastTitle { color: var(--br-text-headings); font-size: var(--br-type-body-s-font-size); line-height: var(--br-type-body-s-line-height); font-weight: var(--br-font-weight-medium); }
+.toastMsg { color: var(--br-text-body); font-size: var(--br-type-body-s-font-size); line-height: var(--br-type-body-s-line-height); }
+.toastActions { display: flex; flex-direction: column; width: 80px; flex: none; border-left: var(--br-border-width-sm) solid var(--br-border-separator-level-2); }
+.toastBtn { all: unset; flex: 1; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: var(--br-type-body-s-font-size); font-weight: var(--br-font-weight-medium); color: var(--br-text-action-on-secondary-default); }
+.toastBtn:hover { background: var(--br-surface-menu-hover); }
+.toastBtn[data-primary="true"] { background: var(--br-surface-action-primary-default); color: var(--br-text-action-on-primary-default); }
+.toastBtn[data-primary="true"]:hover { background: var(--br-surface-action-primary-hover); }
+.toastBtn:focus-visible { outline: var(--br-border-width-md) solid var(--br-border-action-secondary); outline-offset: -2px; }
+
+.mini {
+  display: inline-flex; flex-direction: column; align-items: center; gap: var(--br-scale-100); padding: var(--br-scale-300) var(--br-scale-400);
+  border-radius: var(--br-radius-xlg); background: var(--br-surface-menu-default); box-shadow: var(--br-shadow-menu-modal);
+  color: var(--br-text-body); font-family: var(--br-font-family-body-and-sub); font-size: var(--br-type-body-m-font-size); line-height: var(--br-type-body-m-line-height); font-weight: var(--br-font-weight-medium);
+}
+.mini[data-tone="success"] svg { color: var(--br-border-action-primary); }
+.mini[data-tone="error"] svg { color: var(--br-icons-alert-red); }
+
+.toastStack { position: fixed; z-index: 50; right: var(--br-scale-600); bottom: var(--br-scale-600); display: flex; flex-direction: column; gap: var(--br-scale-300); }
+
+.scrim { position: fixed; inset: 0; z-index: 60; display: flex; align-items: center; justify-content: center; background: var(--br-surface-global-overlay-level-1); }
+.scrimInline { position: absolute; inset: 0; justify-self: stretch; align-self: stretch; }
+.dialog {
+  display: flex; flex-direction: column; align-items: center; box-sizing: border-box; width: 260px; padding-top: var(--br-scale-500);
+  border-radius: var(--br-radius-xlg); background: var(--br-surface-menu-default); box-shadow: var(--br-shadow-modal-light);
+  font-family: var(--br-font-family-body-and-sub); text-align: center; outline: none;
+}
+.dialog[data-tone="error"] .dialogIcon { color: var(--br-icons-alert-red); }
+.dialog[data-tone="info"] .dialogIcon { color: var(--br-border-action-primary); }
+.dialogTitle { margin: var(--br-scale-100) 0 var(--br-scale-200); color: var(--br-text-headings); font-size: var(--br-type-body-m-font-size); line-height: var(--br-type-body-m-line-height); font-weight: var(--br-font-weight-medium); }
+.dialogBody { padding: 0 var(--br-scale-500) var(--br-scale-400); color: var(--br-text-body); font-size: var(--br-type-body-s-font-size); line-height: var(--br-type-body-s-line-height); }
+.dialogBody strong { color: var(--br-text-headings); font-weight: var(--br-font-weight-semi-bold); }
+.dialogActions { display: grid; grid-template-columns: 1fr 1fr; gap: var(--br-scale-200); width: 100%; box-sizing: border-box; padding: var(--br-scale-300) var(--br-scale-300); border-top: var(--br-border-width-sm) solid var(--br-border-separator-level-3); }
+.dialogActions > * { width: 100%; }
+
+.empty { display: flex; flex-direction: column; align-items: center; gap: var(--br-scale-100); padding: var(--br-scale-600) var(--br-scale-400); text-align: center; font-family: var(--br-font-family-body-and-sub); }
+.empty svg { color: var(--br-icons-disabled); }
+.empty[data-tone="issue"] svg { color: var(--br-icons-alert-red); }
+.emptyText { color: var(--br-text-body-deactive); font-size: var(--br-type-body-l-font-size); line-height: var(--br-type-body-l-line-height); font-weight: var(--br-font-weight-light); }
+.emptyHint { color: var(--br-text-information-low); font-size: var(--br-type-body-s-font-size); }

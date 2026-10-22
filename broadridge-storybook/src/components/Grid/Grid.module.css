@@ -1,0 +1,104 @@
+/* Figma: Grid page — Grid Cell, Depth Cell, Grid; Header page — Grid Tools; Tabs page — Tab (grid tabs). */
+
+/* ---------- DataGrid ---------- */
+.wrap {
+  position: relative; overflow: auto; max-width: 100%;
+  background: var(--br-surface-grid-level-2);
+  font-family: var(--br-font-family-body-and-sub);
+}
+.depth { background: var(--br-surface-grid-level-5); }
+.table { border-collapse: separate; border-spacing: 0; min-width: 100%; font-size: 11px; line-height: 16px; font-variant-numeric: tabular-nums; color: var(--br-text-body); }
+
+.th {
+  position: sticky; top: 0; z-index: 2; height: 32px; box-sizing: border-box; padding: 0 var(--br-scale-200);
+  background: var(--br-surface-grid-column-row); color: var(--br-text-body);
+  text-align: left; font-weight: var(--br-font-weight-regular); white-space: nowrap;
+  border-bottom: var(--br-border-width-sm) solid var(--br-border-separator-level-3);
+  border-right: var(--br-border-width-sm) solid var(--br-border-separator-level-3);
+}
+.th:hover { background: var(--br-surface-grid-column-row-rollover); }
+.thInner { display: flex; align-items: center; gap: var(--br-scale-100); }
+.th[data-align="right"] .thInner { justify-content: flex-end; }
+.sortBtn { all: unset; display: inline-flex; align-items: center; gap: 2px; cursor: pointer; border-radius: var(--br-radius-sm); }
+.sortBtn:focus-visible { outline: var(--br-border-width-sm) solid var(--br-border-action-primary); outline-offset: 2px; }
+.sortIcon { color: var(--br-icons-default); display: inline-flex; margin: -4px -4px -4px 0; }
+.th[aria-sort="ascending"] .sortIcon, .th[aria-sort="descending"] .sortIcon { color: var(--br-icons-information); }
+.grouping { color: var(--br-surface-chip-grouping); font-weight: var(--br-font-weight-bold); font-size: 11px; line-height: 12px; }
+
+.td {
+  height: 26px; box-sizing: border-box; padding: 0 var(--br-scale-200); white-space: nowrap;
+  border-bottom: var(--br-border-width-sm) solid var(--br-border-separator-level-3);
+  border-right: var(--br-border-width-sm) solid var(--br-border-separator-level-3);
+}
+.td[data-align="right"] { text-align: right; }
+.td[data-align="center"] { text-align: center; }
+.utility { width: 24px; min-width: 24px; padding: 0; text-align: center; }
+
+.row { cursor: default; outline: none; }
+.row:hover .td { background: var(--br-surface-grid-rollover-row); border-bottom-color: var(--br-border-grid-rollover-row); box-shadow: 0 1px 0 0 var(--br-border-grid-rollover-row) inset; }
+.row:hover .td:hover { background: var(--br-surface-grid-rollover-cell-highlight); }
+.row[aria-selected="true"] .td { background: var(--br-surface-grid-selected-row); border-bottom-color: var(--br-border-grid-selected-row); box-shadow: 0 1px 0 0 var(--br-border-grid-selected-row) inset; }
+.row[data-multi="true"] .td { border-bottom-color: var(--br-border-grid-multi-selected-row); box-shadow: 0 1px 0 0 var(--br-border-grid-multi-selected-row) inset; }
+.row:focus-visible .td { border-bottom-color: var(--br-border-grid-focus); box-shadow: 0 1px 0 0 var(--br-border-grid-focus) inset; }
+
+/* Expand / selection marker cell */
+.lead { position: relative; color: var(--br-icons-default); }
+.row[aria-selected="true"] .lead::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--br-border-action-primary); }
+.row[data-multi="true"] .lead::before { width: 7px; height: 7px; bottom: auto; background: var(--br-border-action-primary); clip-path: polygon(0 0, 100% 0, 0 100%); }
+.expandBtn { all: unset; display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; cursor: pointer; color: var(--br-icons-default); transition: transform 120ms ease; }
+.expandBtn:hover { color: var(--br-icons-hover); }
+.expandBtn[aria-expanded="true"] { transform: rotate(90deg); }
+.expandBtn:focus-visible { outline: var(--br-border-width-sm) solid var(--br-border-action-primary); outline-offset: -2px; border-radius: var(--br-radius-md); }
+.detail .td { background: var(--br-surface-grid-level-3); height: auto; padding: var(--br-scale-300) var(--br-scale-400); white-space: normal; }
+.menuCell { position: sticky; right: 0; background: var(--br-surface-grid-level-2); }
+.menuBtn { all: unset; display: inline-flex; width: 24px; height: 24px; align-items: center; justify-content: center; cursor: pointer; color: var(--br-icons-default); }
+.menuBtn:hover { color: var(--br-icons-hover); }
+
+/* Cell content helpers */
+.acronym {
+  display: inline-flex; align-items: center; height: 13px; padding: 1px 2px; box-sizing: border-box; margin: 0 var(--br-scale-100);
+  border-radius: var(--br-radius-md); background: var(--br-surface-table-header); color: var(--br-text-information-low);
+  font-size: 8px; line-height: 11px; font-weight: var(--br-font-weight-medium); vertical-align: middle;
+}
+.up { color: var(--br-text-price-increase); }
+.down { color: var(--br-text-price-descrease); }
+.bid { color: var(--br-text-bid); }
+.ask { color: var(--br-text-ask); }
+.change { display: inline-flex; align-items: center; gap: 2px; }
+
+/* ---------- Grid tabs ---------- */
+.tabs { display: flex; align-items: flex-end; gap: 2px; padding: 0 var(--br-scale-200); border-bottom: var(--br-border-width-sm) solid var(--br-border-grid-tab-default); font-family: var(--br-font-family-body-and-sub); }
+.tab {
+  all: unset; box-sizing: border-box; display: inline-flex; align-items: center; gap: var(--br-scale-100);
+  height: 32px; padding: 0 var(--br-scale-100) 0 var(--br-scale-400); border-radius: var(--br-radius-lg) var(--br-radius-lg) 0 0;
+  border: var(--br-border-width-sm) solid var(--br-border-grid-tab-unselected); border-bottom: 0;
+  background: var(--br-surface-grid-tab-unselected); color: var(--br-text-body-off);
+  font-size: var(--br-type-body-s-font-size); line-height: var(--br-type-body-s-line-height); cursor: pointer; white-space: nowrap;
+}
+.tab:hover { background: var(--br-surface-grid-tab-hover); color: var(--br-text-body-on); border-color: var(--br-border-grid-grid-tab-hover); }
+.tab[aria-selected="true"] { background: var(--br-surface-grid-tab-default); color: var(--br-text-body-on); border-color: var(--br-border-grid-tab-default); margin-bottom: -1px; height: 33px; }
+.tab:focus-visible { outline: var(--br-border-width-sm) solid var(--br-border-action-primary); outline-offset: -2px; }
+.tabClose { all: unset; display: inline-flex; border-radius: var(--br-radius-md); color: var(--br-icons-default); cursor: pointer; }
+.tabClose:hover { color: var(--br-icons-hover); background: var(--br-surface-grid-tab-hover); }
+.addTab { padding: 0 var(--br-scale-200); }
+
+/* ---------- Grid tools (toolbar) ---------- */
+.tools { display: flex; align-items: center; gap: var(--br-scale-300); flex-wrap: wrap; min-height: 24px; color: var(--br-text-body); font-family: var(--br-font-family-body-and-sub); font-size: var(--br-type-body-s-font-size); line-height: var(--br-type-body-s-line-height); }
+.toolsGroup { display: flex; align-items: center; gap: var(--br-scale-300); }
+.toolIcons { display: flex; align-items: center; gap: var(--br-scale-400); }
+.vr { width: 1px; height: 20px; background: var(--br-border-separator-level-2); flex: none; }
+.iconBtn { all: unset; display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: var(--br-radius-lg); color: var(--br-icons-default); cursor: pointer; }
+.iconBtn:hover { color: var(--br-icons-hover); }
+.iconBtn[aria-pressed="true"] { color: var(--br-icons-information); background: var(--br-surface-global-level-4); }
+.iconBtn:focus-visible { outline: var(--br-border-width-sm) solid var(--br-border-action-primary); }
+.chip {
+  display: inline-flex; align-items: center; gap: var(--br-scale-100); height: 24px; padding: 0 var(--br-scale-200); box-sizing: border-box;
+  border-radius: var(--br-radius-lg); border: var(--br-border-width-sm) solid var(--br-border-chip-filter-default);
+  background: var(--br-surface-chip-filter-default); color: var(--br-text-action-on-primary-default); font-weight: var(--br-font-weight-medium);
+}
+.chip:hover { background: var(--br-surface-chip-filter-hover); border-color: var(--br-border-chip-filter-hover); }
+.chip button { all: unset; display: inline-flex; cursor: pointer; opacity: 0.8; border-radius: var(--br-radius-md); }
+.chip button:hover { opacity: 1; }
+.chip button:focus-visible { outline: var(--br-border-width-sm) solid var(--br-text-action-on-primary-default); }
+.linkBtn { all: unset; cursor: pointer; color: var(--br-text-body-off); }
+.linkBtn:hover { color: var(--br-text-body-on); text-decoration: underline; }

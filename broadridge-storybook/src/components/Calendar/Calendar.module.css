@@ -1,0 +1,55 @@
+/* Figma: Calendar page — Calendar (318px popover) and Calendar Button (40px day cell). */
+.calendar {
+  display: inline-flex; flex-direction: column; gap: var(--br-scale-400);
+  width: 318px; box-sizing: border-box; padding: var(--br-scale-300) var(--br-scale-200);
+  border-radius: var(--br-radius-xlg);
+  background: var(--br-surface-menu-default);
+  box-shadow: var(--br-shadow-menu-modal);
+  font-family: var(--br-font-family-body-and-sub);
+  color: var(--br-text-body-on);
+}
+
+.header { display: flex; align-items: center; justify-content: space-between; gap: var(--br-scale-400); padding: 0 var(--br-scale-100); }
+.selects { display: flex; gap: var(--br-scale-200); }
+.selectWrap { position: relative; display: inline-flex; align-items: center; color: var(--br-icons-default); }
+.select {
+  appearance: none; height: var(--br-scale-800); box-sizing: border-box;
+  padding: 0 28px 0 var(--br-scale-300);
+  border-radius: var(--br-radius-lg);
+  border: var(--br-border-width-sm) solid var(--br-border-input-fields-default);
+  background: var(--br-surface-input-fields-default);
+  color: var(--br-text-input-fields-filled);
+  font: inherit; font-size: var(--br-type-body-s-font-size); line-height: var(--br-type-body-s-line-height); font-weight: var(--br-font-weight-medium);
+  cursor: pointer;
+}
+.select:hover { border-color: var(--br-border-input-fields-hover); background: var(--br-surface-input-fields-hover); }
+.select:focus-visible { outline: none; border-color: var(--br-border-input-fields-selected); }
+.selectWrap > svg { position: absolute; right: 6px; pointer-events: none; }
+.month { width: 110px; }
+.year { width: 76px; }
+
+.grid { display: grid; grid-template-columns: repeat(7, 40px); gap: 1px; justify-content: center; }
+.weekday {
+  height: 20px; display: flex; align-items: center; justify-content: center;
+  color: var(--br-text-information-low);
+  font-size: var(--br-type-body-s-font-size); line-height: var(--br-type-body-s-line-height);
+}
+.head { margin-bottom: 4px; }
+
+/* Calendar Button */
+.day {
+  width: 40px; height: 40px; padding: 0; border: 0; border-radius: var(--br-radius-xlg);
+  background: var(--br-surface-action-tertiary-default);
+  color: var(--br-text-body-on);
+  font: inherit; font-size: var(--br-type-body-l-font-size); line-height: var(--br-type-body-l-line-height); font-weight: var(--br-font-weight-regular);
+  font-variant-numeric: tabular-nums; cursor: pointer;
+  transition: background-color 100ms ease, color 100ms ease;
+}
+.day:hover:not(:disabled) { background: var(--br-surface-action-secondary-hover); color: var(--br-text-action-on-primary-default); }
+.day:focus-visible { outline: var(--br-border-width-sm) solid var(--br-border-action-primary); outline-offset: 1px; }
+.day[data-state="range"] { background: var(--br-surface-action-secondary-default); color: var(--br-text-action-on-primary-default); }
+.day[data-state="active"] { background: var(--br-border-action-primary); color: var(--br-text-action-on-primary-default); }
+.day[data-state="outside"], .day:disabled { color: var(--br-text-action-on-primary-disabled); background: transparent; }
+.day:disabled { cursor: not-allowed; }
+.day[data-state="hidden"] { visibility: hidden; }
+.day[data-today="true"]:not([data-state="active"]) { box-shadow: inset 0 0 0 1px var(--br-border-input-fields-hover); }

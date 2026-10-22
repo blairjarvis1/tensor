@@ -1,0 +1,26 @@
+/* Figma: Charts page — Feature Graphs ("Urgency & Impact") and Small Multiples. */
+.chart { display: flex; flex-direction: column; gap: var(--br-scale-200); font-family: var(--br-font-family-body-and-sub); color: var(--br-text-body); min-width: 0; }
+.head { display: flex; align-items: center; flex-wrap: wrap; gap: var(--br-scale-200) var(--br-scale-600); }
+.title { color: var(--br-text-body-on); font-weight: var(--br-font-weight-medium); font-size: var(--br-type-body-m-font-size); line-height: var(--br-type-body-m-line-height); margin: 0; }
+.compact .title { font-size: var(--br-type-body-s-font-size); line-height: var(--br-type-body-s-line-height); }
+.legend { display: flex; align-items: center; flex-wrap: wrap; gap: var(--br-scale-300); margin-left: auto; font-size: var(--br-type-body-s-font-size); line-height: var(--br-type-body-s-line-height); }
+.venue { color: var(--br-text-body-on); font-weight: var(--br-font-weight-medium); }
+.key { display: inline-flex; align-items: center; gap: 6px; }
+.swatchBar { width: 10px; height: 10px; border-radius: 2px; }
+.swatchLine { width: 12px; height: 2px; background: var(--br-surface-graph-line); }
+.swatchDot { width: 7px; height: 7px; border-radius: 50%; border: 1.5px solid var(--br-surface-graph-line); background: var(--br-surface-global-level-1); box-sizing: border-box; }
+.toggles { display: inline-flex; align-items: center; gap: var(--br-scale-200); color: var(--br-text-body-off); }
+.toggle {
+  display: inline-flex; align-items: center; gap: 6px; height: 24px; padding: 0 var(--br-scale-200);
+  border-radius: var(--br-radius-lg); border: var(--br-border-width-sm) solid var(--br-border-action-secondary);
+  background: transparent; color: var(--br-text-body); font: inherit; cursor: pointer;
+}
+.toggle:hover { border-color: var(--br-border-action-secondary-hover); }
+.toggle[aria-pressed="false"] { color: var(--br-text-disabled); }
+.toggle[aria-pressed="false"] .swatchBar { opacity: 0.35; }
+.toggle:focus-visible { outline: var(--br-border-width-sm) solid var(--br-border-action-primary); outline-offset: 1px; }
+.axisTitles { display: flex; justify-content: space-between; color: var(--br-text-body-off); font-size: 11px; line-height: 16px; }
+.svg { display: block; width: 100%; overflow: visible; }
+.svg text { font-family: var(--br-font-family-body-and-sub); }
+
+.spark { display: inline-block; }

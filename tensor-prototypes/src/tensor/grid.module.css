@@ -1,0 +1,153 @@
+/* Figma: Grid Data — Surface/Grid/Level 2 with a 1px Border/Separator Level 3 outline; cells are Grid Cell instances. */
+.wrap {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  background: var(--br-surface-grid-level-2);
+  border: var(--br-border-width-sm) solid var(--br-border-separator-level-3);
+  border-radius: var(--br-radius-lg) var(--br-radius-lg) 0 0;
+}
+.table {
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+  min-width: 100%;
+  font-family: var(--br-font-family-body-and-sub);
+  font-size: 11px; /* Bdy xsm Reg */
+  line-height: 16px;
+  font-weight: var(--br-font-weight-regular);
+  font-variant-numeric: tabular-nums;
+  color: var(--br-text-body);
+}
+
+/* Header cells: 32px, Surface/Grid/Column Row, 8px side padding */
+.th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  height: 32px;
+  padding: 0 var(--br-scale-200);
+  background: var(--br-surface-grid-column-row);
+  text-align: left;
+  font-weight: var(--br-font-weight-regular);
+  white-space: nowrap;
+  border-bottom: var(--br-border-width-sm) solid var(--br-border-separator-level-3);
+  border-right: var(--br-border-width-sm) solid var(--br-border-separator-level-3);
+}
+.th:hover { background: var(--br-surface-grid-column-row-rollover); }
+.th[data-align="right"] .sortBtn { justify-content: flex-end; }
+.th[data-align="center"] .sortBtn { justify-content: center; }
+.sortBtn {
+  all: unset;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  width: 100%;
+  height: 32px;
+  cursor: pointer;
+  color: var(--br-text-body);
+}
+.sortBtn svg { color: var(--br-icons-information); margin-right: -4px; }
+.sortBtn:focus-visible { outline: var(--br-border-width-sm) solid var(--br-border-action-primary); outline-offset: -2px; border-radius: var(--br-radius-md); }
+.thText { overflow: hidden; text-overflow: ellipsis; }
+.th[aria-sort="ascending"] .sortBtn,
+.th[aria-sort="descending"] .sortBtn { color: var(--br-text-body-on); }
+
+/* Data cells: 26px rows on Surface/Grid/Level 2 */
+.td {
+  height: 26px;
+  padding: 0 var(--br-scale-200);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: var(--br-surface-grid-level-2);
+  border-bottom: var(--br-border-width-sm) solid var(--br-border-separator-level-3);
+  border-right: var(--br-border-width-sm) solid var(--br-border-separator-level-3);
+}
+.td[data-align="right"] { text-align: right; }
+.td[data-align="center"] { text-align: center; }
+.td[data-tone="bid"] { color: var(--br-text-price-increase); }
+.td[data-tone="ask"] { color: var(--br-text-price-descrease); }
+.lead { width: 24px; padding: 0; text-align: center; position: relative; }
+
+.row { cursor: default; outline: none; }
+.row:hover .td { background: var(--br-surface-grid-rollover-row); border-bottom-color: var(--br-border-grid-rollover-row); }
+.row:hover .td:not(.lead):not(.menuCell):hover { background: var(--br-surface-grid-rollover-cell-highlight); color: var(--br-text-grid-hover); }
+.row[aria-selected="true"] .td { background: var(--br-surface-grid-selected-row); border-bottom-color: var(--br-border-grid-selected-row); }
+.row[data-multi="true"] .td { border-bottom-color: var(--br-border-grid-multi-selected-row); }
+.row:focus-visible .td { box-shadow: inset 0 -1px 0 0 var(--br-border-grid-focus), inset 0 1px 0 0 var(--br-border-grid-focus); }
+
+/* Selection marker in the expand column: a 3px bar for single select, a corner flag for multi-select (Figma Multi-select) */
+.row[aria-selected="true"] .lead::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--br-border-action-primary); }
+.row[data-multi="true"] .lead::before { width: 7px; height: 7px; bottom: auto; clip-path: polygon(0 0, 100% 0, 0 100%); }
+
+.expandBtn {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  cursor: pointer;
+  color: var(--br-icons-default);
+  transition: transform 120ms ease;
+}
+.expandBtn:hover { color: var(--br-icons-hover); }
+.expandBtn[aria-expanded="true"] { transform: rotate(90deg); }
+
+/* Row-action column stays pinned to the right edge, as in Figma (Type=Menu, 25px). */
+.menuCell { position: sticky; right: 0; z-index: 1; width: 25px; padding: 0; text-align: center; border-left: var(--br-border-width-sm) solid var(--br-border-separator-level-3); }
+.th.menuCell { z-index: 3; }
+.menuBtn {
+  all: unset;
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border-radius: var(--br-radius-md);
+  color: var(--br-icons-default);
+}
+.menuBtn:hover, .menuBtn[aria-expanded="true"] { color: var(--br-icons-hover); }
+
+.detail .td {
+  height: auto;
+  padding: var(--br-scale-300) var(--br-scale-400) var(--br-scale-300) 32px;
+  white-space: normal;
+  background: var(--br-surface-grid-level-3);
+}
+
+/* Live feed: changed cells flash Price Increase / Decrease, then fade back. */
+.td[data-flash="up"] { animation: flashUp 900ms ease-out; }
+.td[data-flash="down"] { animation: flashDown 900ms ease-out; }
+@keyframes flashUp { from { background: color-mix(in srgb, var(--br-surface-price-increase) 28%, var(--br-surface-grid-level-2)); } }
+@keyframes flashDown { from { background: color-mix(in srgb, var(--br-surface-price-decrease) 24%, var(--br-surface-grid-level-2)); } }
+
+/* Loading: rows dim and a shimmer runs across, used when the child reloads from the parent. */
+.wrap[data-loading] tbody { opacity: 0.35; transition: opacity 120ms ease; }
+.wrap[data-loading]::after {
+  content: '';
+  position: absolute;
+  inset: 32px 0 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--br-surface-global-level-3) 70%, transparent), transparent);
+  background-size: 40% 100%;
+  background-repeat: no-repeat;
+  animation: shimmer 700ms linear infinite;
+}
+@keyframes shimmer { from { background-position: -40% 0; } to { background-position: 140% 0; } }
+
+.empty {
+  position: absolute;
+  inset: 32px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--br-text-information-low);
+  font-size: var(--br-type-body-s-font-size);
+  line-height: var(--br-type-body-s-line-height);
+}

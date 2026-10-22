@@ -1,0 +1,43 @@
+/* Figma: Metrics page — Metric boxes v1.0 / v2.0, Label and Metric. */
+.box {
+  display: flex; gap: var(--br-scale-200); box-sizing: border-box; min-width: 0;
+  padding: var(--br-scale-200) var(--br-scale-200) var(--br-scale-200) var(--br-scale-100);
+  border-radius: var(--br-radius-lg); background: var(--br-surface-metric-cards-default);
+  font-family: var(--br-font-family-body-and-sub);
+}
+.box[data-empty="true"] .label, .box[data-empty="true"] .value { color: var(--br-text-disabled); }
+
+/* Vertical level track: a 2px rail with a dot at low / mid / high (v1) or per-scenario dots (v2). */
+.track { position: relative; width: 12px; flex: none; }
+.track::before { content: ''; position: absolute; left: 5px; top: 4px; bottom: 4px; width: 2px; border-radius: 2px; background: var(--br-surface-scroll-bar-handle-rollover); }
+.dot { position: absolute; left: 3px; width: 6px; height: 6px; border-radius: 50%; background: var(--br-text-headings); transform: translateY(-50%); }
+
+.body { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.label { color: var(--br-text-body-off); font-size: 11px; line-height: 12px; font-weight: var(--br-font-weight-medium); }
+.value { color: var(--br-text-headings); font-size: 18px; line-height: 28px; font-weight: var(--br-font-weight-regular); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.caption { color: var(--br-text-body-off); font-size: 11px; line-height: 12px; font-weight: var(--br-font-weight-medium); font-variant-numeric: tabular-nums; }
+.scenarios { display: flex; gap: var(--br-scale-200); flex-wrap: wrap; padding-top: 2px; }
+.scenarios > span { align-items: flex-start; }
+
+/* Metric grid with carousel paging */
+.grid { display: grid; grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)); gap: var(--br-scale-200); }
+.pager { display: flex; align-items: center; justify-content: center; gap: var(--br-scale-400); margin-top: var(--br-scale-200); }
+.pageBtn { all: unset; display: inline-flex; cursor: pointer; color: var(--br-icons-default); border-radius: var(--br-radius-md); }
+.pageBtn:hover:not(:disabled) { color: var(--br-icons-hover); }
+.pageBtn:disabled { color: var(--br-icons-disabled); cursor: default; }
+.pageBtn:focus-visible { outline: var(--br-border-width-sm) solid var(--br-border-action-primary); }
+.dots { display: flex; gap: var(--br-scale-200); }
+.pageDot { all: unset; width: 8px; height: 8px; border-radius: 50%; background: var(--br-surface-pagination-default-primary); cursor: pointer; }
+.pageDot[aria-current="true"] { background: var(--br-surface-pagination-active); }
+.pageDot:focus-visible { outline: var(--br-border-width-sm) solid var(--br-border-action-primary); outline-offset: 2px; }
+
+/* Label and Metric */
+.lm { display: grid; grid-template-columns: repeat(var(--cols, 1), minmax(0, max-content)); gap: 0 var(--br-scale-800); font-family: var(--br-font-family-body-and-sub); font-size: var(--br-type-body-s-font-size); line-height: var(--br-type-body-s-line-height); }
+.lmCol { display: grid; grid-template-columns: max-content minmax(0, max-content); gap: var(--br-scale-100) var(--br-scale-200); align-items: center; align-content: start; margin: 0; }
+.lmCol dt { color: var(--br-text-body-off); text-align: right; white-space: nowrap; }
+.lmCol dd { margin: 0; color: var(--br-text-body); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.stacked { display: flex; flex-wrap: wrap; gap: var(--br-scale-200) var(--br-scale-400); margin: 0; font-family: var(--br-font-family-body-and-sub); }
+.stacked div { display: flex; flex-direction: column; }
+.stacked dt { color: var(--br-text-body-off); font-size: 11px; line-height: 16px; }
+.stacked dd { margin: 0; color: var(--br-text-body-on); font-size: var(--br-type-body-s-font-size); line-height: var(--br-type-body-s-line-height); font-weight: var(--br-font-weight-medium); }
+.statusPill { display: inline-block; min-width: 72px; padding: 1px 8px; border-radius: var(--br-radius-lg); border: var(--br-border-width-sm) solid var(--br-border-progress-blue-part-filled-new); background: var(--br-surface-progress-blue-part-filled); color: var(--br-text-body-on); font-size: 11px; line-height: 16px; }

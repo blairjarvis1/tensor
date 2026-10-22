@@ -1,0 +1,68 @@
+/* Figma: Buttons / Button - v2. Primary, Secondary, Tertiary × Small, Medium, Large × Destructive. */
+.button {
+  --btn-bg: transparent;
+  --btn-border: transparent;
+  --btn-fg: var(--br-text-action-on-secondary-default);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--br-scale-100);
+  box-sizing: border-box;
+  border-radius: var(--br-radius-lg);
+  border: var(--br-border-width-sm) solid var(--btn-border);
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  font-family: var(--br-font-family-body-and-sub);
+  font-weight: var(--br-font-weight-medium);
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+.button:disabled { cursor: not-allowed; }
+
+/* Focus ring: Figma .FocusRing sits 2px outside the button with a 6px radius. */
+.button:focus-visible {
+  outline: var(--br-border-width-sm) solid var(--br-border-action-primary);
+  outline-offset: 1px;
+}
+
+/* Sizes */
+.small  { height: var(--br-scale-600); padding: 0 var(--br-scale-200); font-size: var(--br-type-body-s-font-size); line-height: var(--br-type-body-s-line-height); }
+.medium { height: var(--br-scale-800); padding: 0 var(--br-scale-200); font-size: var(--br-type-body-m-font-size); line-height: var(--br-type-body-m-line-height); }
+.large  { height: var(--br-scale-850); padding: 0 var(--br-scale-300); font-size: var(--br-type-body-m-font-size); line-height: var(--br-type-body-m-line-height); }
+.iconOnly.small  { width: var(--br-scale-600); padding: 0; }
+.iconOnly.medium { width: var(--br-scale-800); padding: 0; }
+.iconOnly.large  { width: var(--br-scale-850); padding: 0; }
+
+.label { padding: 0 2px; }
+.icon { display: inline-flex; margin: -4px; }
+.small .icon { margin: 0; }
+
+/* Primary */
+.primary { --btn-bg: var(--br-surface-action-primary-default); --btn-border: var(--br-border-action-primary); --btn-fg: var(--br-text-action-on-primary-default); }
+.primary:hover:not(:disabled) { --btn-bg: var(--br-surface-action-primary-hover); --btn-border: var(--br-border-action-primary-hover); --btn-fg: var(--br-text-action-on-primary-hover); }
+.primary:disabled { --btn-bg: var(--br-surface-action-primary-disabled); --btn-border: var(--br-border-action-primary-disabled); --btn-fg: var(--br-text-action-on-primary-disabled); }
+
+/* Secondary (outlined) */
+.secondary { --btn-border: var(--br-border-action-secondary); --btn-fg: var(--br-text-action-on-secondary-default); }
+.secondary:hover:not(:disabled) { --btn-border: var(--br-border-action-secondary-hover); --btn-fg: var(--br-text-action-on-secondary-hover); }
+.secondary:disabled { --btn-border: var(--br-border-action-action-secondary-disabled); --btn-fg: var(--br-text-action-on-secondary-disabled); }
+
+/* Tertiary (ghost) */
+.tertiary { --btn-fg: var(--br-text-action-on-secondary-default); }
+.tertiary:hover:not(:disabled) { --btn-bg: var(--br-surface-action-tertiary-hover); --btn-fg: var(--br-text-action-on-secondary-hover); }
+.tertiary:disabled { --btn-fg: var(--br-text-action-on-secondary-disabled); }
+
+/* Destructive */
+.destructive.primary { --btn-bg: var(--br-border-input-fields-error); --btn-border: var(--br-border-input-fields-error); --btn-fg: var(--br-text-action-on-primary-default); }
+.destructive.primary:hover:not(:disabled) { --btn-bg: var(--br-surface-action-error-hover); --btn-border: var(--br-border-action-error-hover); --btn-fg: var(--br-text-action-on-primary-hover); }
+.destructive.primary:disabled { --btn-bg: var(--br-border-action-error-disabled); --btn-border: var(--br-border-action-error-disabled); --btn-fg: var(--br-text-action-on-primary-disabled); }
+.destructive.secondary { --btn-border: var(--br-border-action-error-default); }
+.destructive.secondary:hover:not(:disabled) { --btn-border: var(--br-border-action-error-hover); }
+.destructive.secondary:disabled { --btn-border: var(--br-border-action-error-disabled); }
+.destructive.tertiary { --btn-fg: var(--br-border-action-error-default); }
+.destructive.tertiary:hover:not(:disabled) { --btn-fg: var(--br-border-action-error-hover); }
+.destructive.tertiary:disabled { --btn-fg: var(--br-border-action-error-disabled); }
+.destructive:focus-visible { outline-color: var(--br-border-action-error-default); }

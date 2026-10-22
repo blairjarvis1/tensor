@@ -1,0 +1,834 @@
+{
+  "$description": "Figma local styles (text, effect, paint) from Broadridge Design System v1.0. Variables live in tokens.tokens.json; styles are not variables, so they are captured here.",
+  "figmaFileKey": "zDEScc95YdqMUidplqm9dd",
+  "exportedAt": "2026-10-16",
+  "text": [
+    {
+      "name": "Bdy xsm Light",
+      "fontFamily": "Inter",
+      "fontStyle": "Light",
+      "fontSize": 11,
+      "lineHeight": 16,
+      "paragraphSpacing": 8,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "lineHeight": "Scale/400",
+        "paragraphSpacing": "Scale/200"
+      }
+    },
+    {
+      "name": "Bdy xsm Reg",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 11,
+      "lineHeight": 16,
+      "paragraphSpacing": 8,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontStyle": "Font Weight/Regular",
+        "fontFamily": "Font Family/Body&sub",
+        "lineHeight": "Scale/400",
+        "paragraphSpacing": "Scale/200"
+      }
+    },
+    {
+      "name": "Bdy xsm Med",
+      "fontFamily": "Inter",
+      "fontStyle": "Medium",
+      "fontSize": 11,
+      "lineHeight": 12,
+      "paragraphSpacing": 8,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontStyle": "Font Weight/Medium",
+        "fontFamily": "Font Family/Body&sub",
+        "lineHeight": "Scale/300",
+        "paragraphSpacing": "Scale/200"
+      }
+    },
+    {
+      "name": "Bdy xsm Bold",
+      "fontFamily": "Inter",
+      "fontStyle": "Bold",
+      "fontSize": 11,
+      "lineHeight": 12,
+      "paragraphSpacing": 8,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontStyle": "Font Weight/Bold",
+        "lineHeight": "Scale/300",
+        "paragraphSpacing": "Scale/200"
+      }
+    },
+    {
+      "name": "Headings/H1/H1 Light",
+      "fontFamily": "Inter",
+      "fontStyle": "Light",
+      "fontSize": 48,
+      "lineHeight": 56,
+      "paragraphSpacing": 32,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "H1/font size",
+        "lineHeight": "H1/line height",
+        "paragraphSpacing": "H1/paragraph spacing",
+        "fontStyle": "Font Weight/Light",
+        "fontFamily": "Font Family/Header"
+      }
+    },
+    {
+      "name": "Headings/H1/H1 Reg",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 48,
+      "lineHeight": 56,
+      "paragraphSpacing": 32,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "H1/font size",
+        "lineHeight": "H1/line height",
+        "paragraphSpacing": "H1/paragraph spacing",
+        "fontStyle": "Font Weight/Regular",
+        "fontFamily": "Font Family/Header"
+      }
+    },
+    {
+      "name": "Headings/H1/H1 Med",
+      "fontFamily": "Inter",
+      "fontStyle": "Medium",
+      "fontSize": 48,
+      "lineHeight": 56,
+      "paragraphSpacing": 32,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "H1/font size",
+        "lineHeight": "H1/line height",
+        "paragraphSpacing": "H1/paragraph spacing",
+        "fontStyle": "Font Weight/Medium",
+        "fontFamily": "Font Family/Header"
+      }
+    },
+    {
+      "name": "Headings/H1/H1 Bold",
+      "fontFamily": "Inter",
+      "fontStyle": "Bold",
+      "fontSize": 48,
+      "lineHeight": 56,
+      "paragraphSpacing": 32,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "H1/font size",
+        "lineHeight": "H1/line height",
+        "paragraphSpacing": "H1/paragraph spacing",
+        "fontStyle": "Font Weight/Bold",
+        "fontFamily": "Font Family/Header"
+      }
+    },
+    {
+      "name": "Headings/H2/H2 Light",
+      "fontFamily": "Inter",
+      "fontStyle": "Light",
+      "fontSize": 40,
+      "lineHeight": 48,
+      "paragraphSpacing": 24,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "H2/font size",
+        "lineHeight": "H2/line height",
+        "paragraphSpacing": "H2/paragraph spacing",
+        "fontStyle": "Font Weight/Light",
+        "fontFamily": "Font Family/Header"
+      }
+    },
+    {
+      "name": "Headings/H2/H2 Reg",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 40,
+      "lineHeight": 48,
+      "paragraphSpacing": 24,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "H2/font size",
+        "lineHeight": "H2/line height",
+        "paragraphSpacing": "H2/paragraph spacing",
+        "fontStyle": "Font Weight/Regular",
+        "fontFamily": "Font Family/Header"
+      }
+    },
+    {
+      "name": "Headings/H2/H2 Med",
+      "fontFamily": "Inter",
+      "fontStyle": "Medium",
+      "fontSize": 40,
+      "lineHeight": 48,
+      "paragraphSpacing": 24,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "H2/font size",
+        "lineHeight": "H2/line height",
+        "paragraphSpacing": "H2/paragraph spacing",
+        "fontStyle": "Font Weight/Medium",
+        "fontFamily": "Font Family/Header"
+      }
+    },
+    {
+      "name": "Headings/H2/H2 Bold",
+      "fontFamily": "Inter",
+      "fontStyle": "Bold",
+      "fontSize": 40,
+      "lineHeight": 48,
+      "paragraphSpacing": 24,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "H2/font size",
+        "lineHeight": "H2/line height",
+        "paragraphSpacing": "H2/paragraph spacing",
+        "fontStyle": "Font Weight/Bold",
+        "fontFamily": "Font Family/Header"
+      }
+    },
+    {
+      "name": "Headings/H3/H3 Light",
+      "fontFamily": "Inter",
+      "fontStyle": "Light",
+      "fontSize": 32,
+      "lineHeight": 40,
+      "paragraphSpacing": 22,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "H3/font size",
+        "lineHeight": "H3/line height",
+        "paragraphSpacing": "H3/paragraph spacing",
+        "fontStyle": "Font Weight/Light",
+        "fontFamily": "Font Family/Header"
+      }
+    },
+    {
+      "name": "Headings/H3/H3 Reg",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 32,
+      "lineHeight": 40,
+      "paragraphSpacing": 22,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "H3/font size",
+        "lineHeight": "H3/line height",
+        "paragraphSpacing": "H3/paragraph spacing",
+        "fontStyle": "Font Weight/Regular",
+        "fontFamily": "Font Family/Header"
+      }
+    },
+    {
+      "name": "Headings/H3/H3 Med",
+      "fontFamily": "Inter",
+      "fontStyle": "Medium",
+      "fontSize": 32,
+      "lineHeight": 40,
+      "paragraphSpacing": 22,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "H3/font size",
+        "lineHeight": "H3/line height",
+        "paragraphSpacing": "H3/paragraph spacing",
+        "fontStyle": "Font Weight/Medium",
+        "fontFamily": "Font Family/Header"
+      }
+    },
+    {
+      "name": "Headings/H3/H3 Bold",
+      "fontFamily": "Inter",
+      "fontStyle": "Bold",
+      "fontSize": 32,
+      "lineHeight": 40,
+      "paragraphSpacing": 22,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "H3/font size",
+        "lineHeight": "H3/line height",
+        "paragraphSpacing": "H3/paragraph spacing",
+        "fontStyle": "Font Weight/Bold",
+        "fontFamily": "Font Family/Header"
+      }
+    },
+    {
+      "name": "Headings/H4/H4 Light",
+      "fontFamily": "Inter",
+      "fontStyle": "Light",
+      "fontSize": 24,
+      "lineHeight": 28,
+      "paragraphSpacing": 20,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "H4/font size",
+        "lineHeight": "H4/line height",
+        "paragraphSpacing": "H4/paragraph spacing",
+        "fontStyle": "Font Weight/Light",
+        "fontFamily": "Font Family/Header"
+      }
+    },
+    {
+      "name": "Headings/H4/H4 Reg",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 24,
+      "lineHeight": 28,
+      "paragraphSpacing": 20,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "H4/font size",
+        "lineHeight": "H4/line height",
+        "paragraphSpacing": "H4/paragraph spacing",
+        "fontStyle": "Font Weight/Regular",
+        "fontFamily": "Font Family/Header"
+      }
+    },
+    {
+      "name": "Headings/H4/H4 Med",
+      "fontFamily": "Inter",
+      "fontStyle": "Medium",
+      "fontSize": 24,
+      "lineHeight": 28,
+      "paragraphSpacing": 20,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "H4/font size",
+        "lineHeight": "H4/line height",
+        "paragraphSpacing": "H4/paragraph spacing",
+        "fontStyle": "Font Weight/Medium",
+        "fontFamily": "Font Family/Header"
+      }
+    },
+    {
+      "name": "Headings/H4/H4 Bold",
+      "fontFamily": "Inter",
+      "fontStyle": "Bold",
+      "fontSize": 24,
+      "lineHeight": 28,
+      "paragraphSpacing": 20,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "H4/font size",
+        "lineHeight": "H4/line height",
+        "paragraphSpacing": "H4/paragraph spacing",
+        "fontStyle": "Font Weight/Bold",
+        "fontFamily": "Font Family/Header"
+      }
+    },
+    {
+      "name": "Headings/H5/H5 Light",
+      "fontFamily": "Inter",
+      "fontStyle": "Light",
+      "fontSize": 14,
+      "lineHeight": 18,
+      "paragraphSpacing": 8,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "H5/font size",
+        "lineHeight": "H5/line height",
+        "paragraphSpacing": "H5/paragraph spacing",
+        "fontStyle": "Font Weight/Light",
+        "fontFamily": "Font Family/Header"
+      }
+    },
+    {
+      "name": "Headings/H5/H5 Reg",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 14,
+      "lineHeight": 18,
+      "paragraphSpacing": 8,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "H5/font size",
+        "lineHeight": "H5/line height",
+        "paragraphSpacing": "H5/paragraph spacing",
+        "fontStyle": "Font Weight/Regular",
+        "fontFamily": "Font Family/Header"
+      }
+    },
+    {
+      "name": "Headings/H5/H5 Med",
+      "fontFamily": "Inter",
+      "fontStyle": "Medium",
+      "fontSize": 14,
+      "lineHeight": 18,
+      "paragraphSpacing": 8,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "H5/font size",
+        "lineHeight": "H5/line height",
+        "paragraphSpacing": "H5/paragraph spacing",
+        "fontStyle": "Font Weight/Medium",
+        "fontFamily": "Font Family/Header"
+      }
+    },
+    {
+      "name": "Headings/H5/H5 Bold",
+      "fontFamily": "Inter",
+      "fontStyle": "Bold",
+      "fontSize": 14,
+      "lineHeight": 18,
+      "paragraphSpacing": 8,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "H5/font size",
+        "lineHeight": "H5/line height",
+        "paragraphSpacing": "H5/paragraph spacing",
+        "fontStyle": "Font Weight/Bold",
+        "fontFamily": "Font Family/Header"
+      }
+    },
+    {
+      "name": "Bdy/Bdy XS/Bdy xxsm Light",
+      "fontFamily": "Inter",
+      "fontStyle": "Light",
+      "fontSize": 10,
+      "lineHeight": 16,
+      "paragraphSpacing": 8,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "Body XXSM/font size",
+        "lineHeight": "Body XXSM/line height",
+        "paragraphSpacing": "Body XXSM/paragraph spacing",
+        "fontStyle": "Font Weight/Light",
+        "fontFamily": "Font Family/Body&sub"
+      }
+    },
+    {
+      "name": "Bdy/Bdy XS/Bdy xxsm Reg",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 10,
+      "lineHeight": 16,
+      "paragraphSpacing": 8,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "Body XXSM/font size",
+        "lineHeight": "Body XXSM/line height",
+        "paragraphSpacing": "Body XXSM/paragraph spacing",
+        "fontStyle": "Font Weight/Regular",
+        "fontFamily": "Font Family/Body&sub"
+      }
+    },
+    {
+      "name": "Bdy/Bdy XS/Bdy xxsm Med",
+      "fontFamily": "Inter",
+      "fontStyle": "Medium",
+      "fontSize": 10,
+      "lineHeight": 16,
+      "paragraphSpacing": 8,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "Body XXSM/font size",
+        "lineHeight": "Body XXSM/line height",
+        "paragraphSpacing": "Body XXSM/paragraph spacing",
+        "fontStyle": "Font Weight/Medium",
+        "fontFamily": "Font Family/Body&sub"
+      }
+    },
+    {
+      "name": "Bdy/Bdy XS/Bdy xxsm Bold",
+      "fontFamily": "Inter",
+      "fontStyle": "Bold",
+      "fontSize": 10,
+      "lineHeight": 16,
+      "paragraphSpacing": 8,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "Body XXSM/font size",
+        "lineHeight": "Body XXSM/line height",
+        "paragraphSpacing": "Body XXSM/paragraph spacing",
+        "fontStyle": "Font Weight/Bold",
+        "fontFamily": "Font Family/Body&sub"
+      }
+    },
+    {
+      "name": "Bdy/Bdy sm/Bdy sm Light",
+      "fontFamily": "Inter",
+      "fontStyle": "Light",
+      "fontSize": 12,
+      "lineHeight": 16,
+      "paragraphSpacing": 16,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "Body S/font size",
+        "lineHeight": "Body S/line height",
+        "paragraphSpacing": "Body S/paragraph spacing",
+        "fontStyle": "Font Weight/Light",
+        "fontFamily": "Font Family/Body&sub"
+      }
+    },
+    {
+      "name": "Bdy/Bdy sm/Bdy sm Reg",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 12,
+      "lineHeight": 16,
+      "paragraphSpacing": 16,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "Body S/font size",
+        "lineHeight": "Body S/line height",
+        "paragraphSpacing": "Body S/paragraph spacing",
+        "fontStyle": "Font Weight/Regular",
+        "fontFamily": "Font Family/Body&sub"
+      }
+    },
+    {
+      "name": "Bdy/Bdy sm/Bdy sm Med",
+      "fontFamily": "Inter",
+      "fontStyle": "Medium",
+      "fontSize": 12,
+      "lineHeight": 16,
+      "paragraphSpacing": 16,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "Body S/font size",
+        "lineHeight": "Body S/line height",
+        "paragraphSpacing": "Body S/paragraph spacing",
+        "fontStyle": "Font Weight/Medium",
+        "fontFamily": "Font Family/Body&sub"
+      }
+    },
+    {
+      "name": "Bdy/Bdy sm/Bdy sm Bold",
+      "fontFamily": "Inter",
+      "fontStyle": "Bold",
+      "fontSize": 12,
+      "lineHeight": 16,
+      "paragraphSpacing": 16,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "Body S/font size",
+        "lineHeight": "Body S/line height",
+        "paragraphSpacing": "Body S/paragraph spacing",
+        "fontStyle": "Font Weight/Bold",
+        "fontFamily": "Font Family/Body&sub"
+      }
+    },
+    {
+      "name": "Bdy/Bdy sm/Bdy Underline",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 12,
+      "lineHeight": 16,
+      "paragraphSpacing": 16,
+      "letterSpacing": 0,
+      "textDecoration": "UNDERLINE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "Body S/font size",
+        "lineHeight": "Body S/line height",
+        "paragraphSpacing": "Body S/paragraph spacing",
+        "fontStyle": "Font Weight/Regular",
+        "fontFamily": "Font Family/Body&sub"
+      }
+    },
+    {
+      "name": "Bdy/Bdy md/Bdy md Light",
+      "fontFamily": "Inter",
+      "fontStyle": "Light",
+      "fontSize": 14,
+      "lineHeight": 20,
+      "paragraphSpacing": 12,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "Body M/font size",
+        "lineHeight": "Body M/line height",
+        "paragraphSpacing": "Body M/paragraph spacing",
+        "fontStyle": "Font Weight/Light",
+        "fontFamily": "Font Family/Body&sub"
+      }
+    },
+    {
+      "name": "Bdy/Bdy md/Bdy md Reg",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 14,
+      "lineHeight": 20,
+      "paragraphSpacing": 12,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "Body M/font size",
+        "lineHeight": "Body M/line height",
+        "paragraphSpacing": "Body M/paragraph spacing",
+        "fontStyle": "Font Weight/Regular",
+        "fontFamily": "Font Family/Body&sub"
+      }
+    },
+    {
+      "name": "Bdy/Bdy md/Bdy md Med",
+      "fontFamily": "Inter",
+      "fontStyle": "Medium",
+      "fontSize": 14,
+      "lineHeight": 20,
+      "paragraphSpacing": 12,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "Body M/font size",
+        "lineHeight": "Body M/line height",
+        "paragraphSpacing": "Body M/paragraph spacing",
+        "fontStyle": "Font Weight/Medium",
+        "fontFamily": "Font Family/Body&sub"
+      }
+    },
+    {
+      "name": "Bdy/Bdy md/Bdy md Bold",
+      "fontFamily": "Inter",
+      "fontStyle": "Bold",
+      "fontSize": 14,
+      "lineHeight": 20,
+      "paragraphSpacing": 12,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "Body M/font size",
+        "lineHeight": "Body M/line height",
+        "paragraphSpacing": "Body M/paragraph spacing",
+        "fontStyle": "Font Weight/Bold",
+        "fontFamily": "Font Family/Body&sub"
+      }
+    },
+    {
+      "name": "Bdy/Bdy lg/Bdy lg Light",
+      "fontFamily": "Inter",
+      "fontStyle": "Light",
+      "fontSize": 16,
+      "lineHeight": 24,
+      "paragraphSpacing": 14,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "Body L/font size",
+        "lineHeight": "Body L/line height",
+        "paragraphSpacing": "Body L/paragraph spacing",
+        "fontStyle": "Font Weight/Light",
+        "fontFamily": "Font Family/Body&sub"
+      }
+    },
+    {
+      "name": "Bdy/Bdy lg/Bdy lg Reg",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 16,
+      "lineHeight": 24,
+      "paragraphSpacing": 14,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "Body L/font size",
+        "lineHeight": "Body L/line height",
+        "paragraphSpacing": "Body L/paragraph spacing",
+        "fontStyle": "Font Weight/Regular",
+        "fontFamily": "Font Family/Body&sub"
+      }
+    },
+    {
+      "name": "Bdy/Bdy lg/Bdy lg Med",
+      "fontFamily": "Inter",
+      "fontStyle": "Medium",
+      "fontSize": 16,
+      "lineHeight": 24,
+      "paragraphSpacing": 14,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "Body L/font size",
+        "lineHeight": "Body L/line height",
+        "paragraphSpacing": "Body L/paragraph spacing",
+        "fontStyle": "Font Weight/Medium",
+        "fontFamily": "Font Family/Body&sub"
+      }
+    },
+    {
+      "name": "Bdy/Bdy lg/Bdy lg Bold",
+      "fontFamily": "Inter",
+      "fontStyle": "Bold",
+      "fontSize": 16,
+      "lineHeight": 24,
+      "paragraphSpacing": 14,
+      "letterSpacing": 0,
+      "textDecoration": "NONE",
+      "textCase": "ORIGINAL",
+      "boundVariables": {
+        "fontSize": "Body L/font size",
+        "lineHeight": "Body L/line height",
+        "paragraphSpacing": "Body L/paragraph spacing",
+        "fontStyle": "Font Weight/Bold",
+        "fontFamily": "Font Family/Body&sub"
+      }
+    }
+  ],
+  "effects": [
+    {
+      "name": "Card light hover shadow",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "x": 0,
+          "y": 0,
+          "blur": 20,
+          "spread": 0,
+          "color": [
+            0,
+            0,
+            0,
+            0.2
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Modal light",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "x": 0,
+          "y": 0,
+          "blur": 12,
+          "spread": 0,
+          "color": [
+            0,
+            0,
+            0,
+            0.5
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Menu Modal",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "x": 0,
+          "y": 0,
+          "blur": 40,
+          "spread": 0,
+          "color": [
+            0,
+            0,
+            0,
+            0.5
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Presentation ticket",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "x": 0,
+          "y": 20,
+          "blur": 60,
+          "spread": 0,
+          "color": [
+            0,
+            0,
+            0,
+            0.3
+          ]
+        }
+      ]
+    }
+  ],
+  "paints": [
+    {
+      "name": "Gradient vibrant",
+      "type": "SOLID",
+      "value": "#4985FD"
+    },
+    {
+      "name": "Gradient vibrant 2",
+      "type": "GRADIENT_LINEAR",
+      "stops": [
+        [
+          0,
+          "#C870FF"
+        ],
+        [
+          1,
+          "#2558FF"
+        ]
+      ],
+      "note": "Linear gradient; angle approximated from Figma transform"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+/* Figma: Pagination, Tooltips, UI (Separators, Scroll bars, Overlay fades) and Status Bars (Execution Status). */
+
+/* Pagination */
+.pager { display: inline-flex; flex-direction: column; align-items: center; gap: var(--br-scale-200); font-family: var(--br-font-family-body-and-sub); }
+.pagerRow { display: flex; align-items: center; gap: var(--br-scale-800); }
+.small .pagerRow { gap: var(--br-scale-600); }
+.arrow { all: unset; display: inline-flex; cursor: pointer; color: var(--br-icons-default); border-radius: var(--br-radius-md); }
+.arrow:hover:not(:disabled) { color: var(--br-icons-hover); }
+.arrow:disabled { color: var(--br-icons-disabled); cursor: default; }
+.arrow:focus-visible, .dot:focus-visible { outline: var(--br-border-width-sm) solid var(--br-border-action-primary); outline-offset: 2px; }
+.dots { display: flex; gap: var(--br-scale-200); }
+.dot { all: unset; width: 12px; height: 12px; border-radius: 50%; background: var(--br-surface-pagination-default-primary); cursor: pointer; }
+.small .dot { width: 8px; height: 8px; }
+.dot[data-on="true"] { background: var(--br-surface-pagination-active); }
+.pagerText { display: flex; align-items: center; gap: var(--br-scale-200); color: var(--br-text-body); font-size: var(--br-type-body-s-font-size); line-height: var(--br-type-body-s-line-height); }
+.pagerText i { width: 1px; height: 14px; background: var(--br-border-separator-level-1); }
+
+/* Tooltip */
+.tipWrap { position: relative; display: inline-flex; }
+.tip {
+  position: absolute; z-index: 40; pointer-events: none; white-space: nowrap;
+  padding: var(--br-scale-200) var(--br-scale-300); border-radius: var(--br-radius-lg);
+  background: var(--br-surface-tooltip-background); color: var(--br-text-action-on-secondary-default); box-shadow: var(--br-shadow-modal-light);
+  font-family: var(--br-font-family-body-and-sub); font-size: var(--br-type-body-s-font-size); line-height: var(--br-type-body-s-line-height); font-weight: var(--br-font-weight-medium);
+  opacity: 0; transition: opacity 120ms ease 300ms;
+}
+.tip[data-open="true"] { opacity: 1; }
+.top { bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%); }
+.bottom { top: calc(100% + 6px); left: 50%; transform: translateX(-50%); }
+.left { right: calc(100% + 6px); top: 50%; transform: translateY(-50%); }
+.right { left: calc(100% + 6px); top: 50%; transform: translateY(-50%); }
+@media (prefers-reduced-motion: reduce) { .tip { transition: none; } }
+
+/* Separator */
+.sep { border: 0; margin: 0; flex: none; background: var(--sep, var(--br-border-separator-level-1)); }
+.sep[data-o="horizontal"] { height: 1px; width: 100%; }
+.sep[data-o="vertical"] { width: 1px; align-self: stretch; min-height: 12px; }
+
+/* Scroll area with Broadridge scroll bars */
+.scroll { overflow: auto; scrollbar-width: thin; scrollbar-color: var(--br-surface-scroll-bar-handle) var(--br-surface-scroll-bar-background); }
+.scroll::-webkit-scrollbar { width: 8px; height: 8px; }
+.scroll::-webkit-scrollbar-track { background: var(--br-surface-scroll-bar-background); }
+.scroll::-webkit-scrollbar-thumb { background: var(--br-surface-scroll-bar-handle); border-radius: 8px; border: 2px solid var(--br-surface-scroll-bar-background); }
+.scroll::-webkit-scrollbar-thumb:hover { background: var(--br-surface-scroll-bar-handle-rollover); }
+
+/* Overlay fade: a gradient edge over scrolling content */
+.fadeWrap { position: relative; }
+.fade { position: absolute; left: 0; right: 0; height: var(--fade, 48px); pointer-events: none; }
+.fade[data-edge="bottom"] { bottom: 0; background: linear-gradient(to bottom, transparent, var(--fade-to, var(--br-surface-global-level-2))); }
+.fade[data-edge="top"] { top: 0; background: linear-gradient(to top, transparent, var(--fade-to, var(--br-surface-global-level-2))); }
+
+/* Execution status pill */
+.status {
+  position: relative; display: inline-flex; align-items: center; gap: var(--br-scale-100); box-sizing: border-box; width: var(--w, 101px); height: 22px; padding: 0 var(--br-scale-200);
+  border-radius: var(--br-radius-lg); border: var(--br-border-width-sm) solid transparent; overflow: hidden;
+  color: var(--br-text-body); font-family: var(--br-font-family-body-and-sub); font-size: 11px; line-height: 12px; font-weight: var(--br-font-weight-medium); white-space: nowrap;
+}
+.status > span:not(.statusFill) { position: relative; }
+.statusFill { position: absolute; left: 0; top: 0; bottom: 0; background: var(--br-surface-progress-blue-part-filled); }
+.status[data-s="new"], .status[data-s="working"], .status[data-s="part-filled"] { border-color: var(--br-border-progress-blue-part-filled-new); }
+.status[data-s="filled"] { background: var(--br-surface-progress-green-filled); border-color: var(--br-border-progress-green-filled); color: var(--br-text-body-on); }
+.status[data-s="cancelled"] { border-color: var(--br-border-progress-red-cancelled); color: var(--br-text-cancelled); }
+.status[data-final="true"] { height: 20px; }
+.status[data-final="true"][data-s="filled"] { background: var(--br-surface-progress-bg-3); border-color: var(--br-border-progress-filled); color: var(--br-text-body); }
+.status[data-final="true"][data-s="cancelled"] { border-color: transparent; color: var(--br-text-body-deactive); }

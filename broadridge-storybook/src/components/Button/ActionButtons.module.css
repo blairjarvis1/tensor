@@ -1,0 +1,69 @@
+/* Figma: Buttons page — Icon Button, Square icon Button, Circle Button, Stepper. */
+.focusable:focus-visible { outline: var(--br-border-width-sm) solid var(--br-border-action-primary); outline-offset: 1px; }
+
+/* Icon Button Primary / Secondary: 97px tile, icon above label */
+.tile {
+  display: inline-flex; flex-direction: column; align-items: center; justify-content: center;
+  min-width: 97px; box-sizing: border-box; border-radius: var(--br-radius-lg);
+  border: var(--br-border-width-sm) solid transparent; cursor: pointer;
+  font-family: var(--br-font-family-body-and-sub); font-weight: var(--br-font-weight-medium);
+  transition: background-color 120ms ease, border-color 120ms ease;
+}
+.tilePrimary {
+  height: 80px; padding: var(--br-scale-200) var(--br-scale-300) var(--br-scale-300);
+  background: var(--br-surface-action-primary-default); border-color: var(--br-border-action-primary);
+  color: var(--br-text-action-on-primary-default);
+  font-size: var(--br-type-body-m-font-size); line-height: var(--br-type-body-m-line-height);
+}
+.tilePrimary:hover:not(:disabled) { background: var(--br-surface-action-primary-hover); border-color: var(--br-border-action-primary-hover); }
+.tilePrimary:disabled { background: var(--br-surface-action-primary-disabled); border-color: var(--br-border-action-primary-disabled); color: var(--br-text-action-on-primary-disabled); cursor: not-allowed; }
+.tilePrimary:disabled .tileIcon { color: var(--br-icons-disabled); }
+.tileSecondary {
+  height: 84px; gap: var(--br-scale-100); padding: var(--br-scale-500) var(--br-scale-300);
+  background: var(--br-surface-tab-buttons-default-secondary); border-color: var(--br-border-action-secondary);
+  color: var(--br-text-action-on-secondary-default);
+  font-size: var(--br-type-body-s-font-size); line-height: var(--br-type-body-s-line-height);
+}
+.tileSecondary:hover:not(:disabled) { border-color: var(--br-border-action-secondary-hover); background: var(--br-surface-tab-buttons-hover-secondary); }
+/* Figma binds Text/Action/On Primary Disabled here, which is near-white in Light mode; On Secondary Disabled reads in both modes. */
+.tileSecondary:disabled { border-color: var(--br-border-action-action-secondary-disabled); color: var(--br-text-action-on-secondary-disabled); cursor: not-allowed; }
+.tileIcon { display: inline-flex; }
+
+/* Square icon Button: 28px, 4px padding, 20px icon */
+.square {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; padding: var(--br-scale-100); box-sizing: border-box;
+  border-radius: var(--br-radius-lg); border: var(--br-border-width-sm) solid transparent; cursor: pointer;
+  transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+.squarePrimary { background: var(--br-surface-action-primary-default); border-color: var(--br-border-action-primary); color: var(--br-icons-actions-on-primary-hover); }
+.squarePrimary:hover:not(:disabled) { background: var(--br-surface-action-primary-hover); border-color: var(--br-border-action-primary-hover); }
+.squarePrimary:disabled { background: var(--br-surface-action-primary-disabled); border-color: var(--br-border-action-primary-disabled); color: var(--br-icons-actions-on-primary-disabled); cursor: not-allowed; }
+.squareSecondary { background: transparent; border-color: var(--br-border-action-secondary); color: var(--br-icons-actions-on-secondary-default); }
+.squareSecondary:hover:not(:disabled) { border-color: var(--br-border-action-secondary-hover); color: var(--br-icons-actions-on-secondary-hover); }
+.squareSecondary:disabled { border-color: var(--br-border-action-action-secondary-disabled); color: var(--br-icons-actions-on-secondary-disabled); cursor: not-allowed; }
+
+/* Circle Button: 128px drop target with icon + hint */
+.circle {
+  display: inline-flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--br-scale-100);
+  width: 128px; height: 128px; border-radius: 50%; border: 0; padding: var(--br-scale-400); box-sizing: border-box;
+  background: var(--br-surface-action-circle-button); color: var(--br-text-body); cursor: pointer;
+  font-family: var(--br-font-family-body-and-sub); font-weight: var(--br-font-weight-medium);
+  font-size: var(--br-type-body-s-font-size); line-height: var(--br-type-body-s-line-height); text-align: center;
+  transition: background-color 120ms ease;
+}
+.circle:hover:not(:disabled) { background: var(--br-surface-action-circle-button-hover); }
+.circle:disabled { color: var(--br-text-disabled); cursor: not-allowed; }
+.circleIcon { color: var(--br-icons-information); }
+.circle:disabled .circleIcon { color: var(--br-icons-disabled); }
+
+/* Stepper: 16px plus / minus */
+.stepper {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 16px; height: 16px; padding: 0; border: 0; border-radius: 50%; cursor: pointer; overflow: hidden;
+  background: var(--br-surface-plus-minus-default-primary); color: var(--br-icons-information);
+  transition: background-color 120ms ease;
+}
+.stepper:hover:not(:disabled) { background: var(--br-surface-plus-minus-hover); color: var(--br-icons-actions-on-primary-hover); }
+.stepper:disabled { color: var(--br-icons-disabled); cursor: not-allowed; }
+.stepper:focus-visible { outline: var(--br-border-width-sm) solid var(--br-border-action-primary); outline-offset: 1px; }

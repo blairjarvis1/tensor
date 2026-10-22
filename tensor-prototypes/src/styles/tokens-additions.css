@@ -1,0 +1,23 @@
+/*
+ * Semantic tokens that exist in the Figma library (Broadridge Design System v1.0, checked 21 Oct 2026)
+ * but not yet in the Storybook token build. Named with the same rules as tokens.css so they can be
+ * dropped once Storybook catches up.
+ */
+:root,
+[data-theme="dark"] {
+  --br-surface-chrome-main-window: color-mix(in srgb, var(--br-brand-neutral-900) 80%, transparent);
+  --br-surface-chrome-grouped-panel: color-mix(in srgb, var(--br-brand-neutral-900) 30%, transparent);
+  --br-surface-chrome-inner-module-panel: var(--br-brand-neutral-900);
+  --br-surface-chrome-inner-content-area: var(--br-surface-global-level-2);
+  --br-surface-pending: var(--br-raw-yellow-default);
+  --br-surface-ended: var(--br-raw-neutral-600);
+}
+
+[data-theme="light"] {
+  --br-surface-chrome-main-window: color-mix(in srgb, var(--br-brand-lightui-100) 80%, transparent);
+  --br-surface-chrome-grouped-panel: color-mix(in srgb, var(--br-brand-lightui-100) 30%, transparent);
+  --br-surface-chrome-inner-module-panel: var(--br-brand-lightui-100);
+  --br-surface-chrome-inner-content-area: var(--br-surface-global-level-2);
+  --br-surface-pending: var(--br-raw-yellow-default);
+  --br-surface-ended: var(--br-raw-neutral-200);
+}
